@@ -14,7 +14,7 @@ COUNTER_POS = 4;
 
 samplingrate = 256; %Hz
 BYTES_PACK = 17;
-NPACKETS = samplingrate * 3;
+NPACKETS = samplingrate * 1;
 NBYTESREAD = BYTES_PACK * NPACKETS;
 NELECTRODESSIGNALS = 6;
 
@@ -82,11 +82,11 @@ for l = 1:NELECTRODESSIGNALS
 end
 
 %Plot results
-%figure;
-%for n = 1:BYTES_PACK
-%    subplot(5,4,n);
-%    plot(parseddata(n, :));
-%end
+figure;
+for n = 1:BYTES_PACK
+    subplot(5,4,n);
+    plot(parseddata(n, :));
+end
 
 %Plot results
 %figure;
@@ -95,17 +95,17 @@ end
 %    plot(trace(n, :));
 %end
 
-figure;
-for n = 1:NELECTRODESSIGNALS
-    trace(n, :) = detrend(trace(n, :), 0);
-    myfft = fft(trace(n, :));
-    freq = 0:cols/length(trace(n, :)):cols/2;
-    myfft = myfft(1:length(trace(n, :))/2+1);
-    subplot(2,3,n);
-    %plot(real(myfft));
-    plot(freq, abs(myfft));
-    %plot(trace(n, :));
-    %max(abs(myfft));
-end
+%figure;
+%for n = 1:NELECTRODESSIGNALS
+%    trace(n, :) = detrend(trace(n, :), 0);
+%    myfft = fft(trace(n, :));
+%    freq = 0:cols/length(trace(n, :)):cols/2;
+%    myfft = myfft(1:length(trace(n, :))/2+1);
+%    subplot(2,3,n);
+%    %plot(real(myfft));
+%    plot(freq, abs(myfft));
+%    %plot(trace(n, :));
+%    %max(abs(myfft));
+%end
 
 fclose(device);
