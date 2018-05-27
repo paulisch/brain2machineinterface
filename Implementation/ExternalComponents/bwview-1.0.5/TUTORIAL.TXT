@@ -1,0 +1,424 @@
+BWView -- Recorded brain-wave viewing app
+=========================================
+
+  Copyright (c) 2002 Jim Peters, <http://uazu.net/>.  All rights
+  reserved.  Released under the GNU General Public Licence version 2.
+  See the file COPYING for details, or visit <http://www.fsf.org>.
+
+  FFTW code is Copyright (c) 1997-1999 Massachusetts Institute of
+  Technology, released under the GNU GPL.  See <http://www.fftw.org>
+  for the original sources.
+
+  The SDL library code is released under the GNU Lesser General Public
+  Licence version 2 or later.  See file COPYING.LIB for details.  See
+  <http://libsdl.org/> for more information on this project.
+
+  "This program is free software; you can redistribute it and/or 
+  modify it under the terms of the GNU General Public License 
+  version 2 as published by the Free Software Foundation."
+  
+  "This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details."
+  
+  "You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307
+  USA"
+
+Note that this software is released as freeware.  However, if you want
+to give me some money I'm not going to argue with you.  See my pages
+here for details:
+
+  http://uazu.net/money/
+
+
+Brief spec
+----------
+
+This program allows the analysis of multiple-channel brain-wave data
+into log-frequency against time amplitude plots.  It is designed for
+navigating around the data and getting a visual understanding of it as
+quickly as possible.  It is also designed to be accurate and
+predictable, like a good engineering tool.  The algorithm is based on
+a FFT-accelerated convolution of the signal with a series of complex
+wavelets.  Each wavelet is formed by combining a Blackman window with
+a complex 'corkscrew' at the desired frequency (there must be a
+mathematical term for this).  The window-width used is proportional to
+the wavelength, and this ratio can be varied within the program to
+change the display to show different aspects of the data.
+
+(TODO: The program also uses phase information to give accurate
+measurements of the centre-frequency of any trace on the display.)
+
+
+Controlling the program
+-----------------------
+
+The following keys allow navigation around the file:
+
+  PageUp   Back a screen
+  PageDn   Forward a screen
+  BackSp   Back a screen
+  Space    Forward a screen
+  Left     Back a half-screen
+  Right    Forward a half-screen
+  Up       Move up an octave in frequency
+  Down     Move down an octave in frequency
+  Home     Go to the start of the file
+  End      Go to the end of the file
+
+You should run the tool with Caps Lock OFF.  The following shifted
+letters and other keys give special functions:
+
+  shift-O  Optimise the FFTW engine.  This makes sure the FFTs are
+           running as fast as possible on your machine.  The
+           optimisation information is saved into a 'wisdom' file, so
+           you only need to do it once, if you do it at all (FFTW seems
+	   to work well in any case, with or without optimisation).
+
+  ESC      Exit the program.
+
+  Q        Exit the program.
+
+  .        The dot (or 'period') key causes BWView to recheck the file
+           to see if any further data has been written since it last
+           looked and update the display.  This can be used to analyse 
+           a file whilst it is being recorded.
+
+  shift-F  Turn 'follow' mode on or off.  When turned on, the display 
+	   updates to the current end-of-file every second.  This makes 
+           it easier to automatically follow a file whilst it is being 
+	   written to.  Other commands continue to work normally
+           whilst the file is being followed.
+
+There are many settings that affect what is displayed, and these are
+summarised in the top-left corner of the screen at all times.  If you
+press any of the letters listed there, a short description of the
+parameter will appear on the status line, and the current value will
+be shown at the very top-left of the screen.  You can now adjust this
+value, either using the number keys or the '+' and '-' keys.  The
+number keys provide preset values that are quick to access, and the
+'+' and '-' keys can be used for fine-tuning if required.  The presets
+are all read from a configuration file, which you can customise if you
+want to.  See later for that.
+
+Here are the keys related to this:
+
+  a-z      Select a setting to adjust
+  0-9      Change the setting to one of its preset values
+  +        Increase a setting by a small amount
+  -        Decrease a setting by a small amount
+  =        Same as '+' (for UK/US users, so they don't have to
+	    hold shift)
+
+Moving the mouse cursor over the main area of the display allows you
+to read off time, frequency and magnitude information.  It also shows
+you the nearest peak frequency on the display, and its magnitude.
+
+Clicking and holding the mouse button replaces the normal signal
+display with a version that shows the windowed signal that has been
+used to calculate the point the mouse cursor is over.  This is useful
+to get an understanding of the analysis method, and to see which
+features in the signal data might be affecting an area in the main
+display that you are interested in.
+
+Note that, for very large window widths, you won't be able to see the
+whole of the window used to calculate that point within the width of
+the display.  Adjusting the 't' setting will solve this problem.
+
+
+
+Getting started with some data
+------------------------------
+
+Try loading a file using one of these command-lines:
+
+  bwview jm2/140 log001.dat
+  bwview jm4/130 example.dat
+
+When the data first appears, you probably won't see too much.  You
+need to start by adjusting the brightness.  Press 'b', and then '9' or
+'0' and work down the digits until it looks right.  You'll also
+probably need to adjust the gain for the signal level display so that
+you can see it properly.  Use 's' and then digit keys until that looks
+okay.
+
+It's worth bearing in mind that if you see a bright white area in the
+main area of the display, the signal is probably saturated (meaning
+the values are too large to be displayed properly), and you're
+probably missing a lot of detail.  Reduce the brightness a bit and
+you'll see.
+
+If you see red lines in the signal display area, these mean that there
+were errors in the data file, probably sync errors.  Bear this in mind
+when interpreting data around these points.  If it is all red, then
+you have probably chosen the wrong file format!
+
+If updates are very slow on your machine, you can reduce the
+resolution using 'v'.  This makes it quicker to navigate -- for
+example using 'v4' to move around, and then switching back to 'v1'
+once you've spotted something you want to look at.  You can also make
+the window smaller by resizing it, or even run in full-screen mode at
+640x480 or 800x600 if your machine supports that (see later section).
+You can also adjust the font -- 'f1' gives small text, and 'f2' gives
+large text.
+
+Once you've got used to adjusting brightness and moving around, it's
+time to understand a bit more about how the analysis works.  At each
+moment of time for each frequency, the signal is analysed by testing a
+'window' of the original sampled signal.  The window used is a
+'Blackman' window which gives good rejection of other frequencies.
+Click on a part of the main display to see the window used to
+calculate that point.  The window used for a high frequency is
+narrower than that used for a low frequency, because the wavelength of
+a high frequency wave is much shorter; using a narrow window at a low
+frequency would give very little information.
+
+The size of the window used is therefore measured in wavelengths, and
+when expressed in wavelengths, it is constant over the whole display.
+The default presets allow you to adjust the window from 0.5
+wavelengths up to 16 wavelengths.  Using a narrow window (small
+numbers) gives a lot of time-information, but frequency information is
+very blurred.  Using a wide window (larger numbers) gives precise
+frequency information, but the traces are blurred in time (left to
+right).
+
+For instance, if you had a pure sine-wave as input, using a narrow
+window would show a wide blurry line across the trace.  As the window
+is made wider, the line becomes thinner and thinner, more and more
+precise.  However, if the sine-wave changes in frequency then with the
+very wide window you would see a lot of blurring in the areas where
+the frequency changed, because the window is effectively averaging a
+changing frequency.  A shorter window would show less blurring in this
+case.
+
+Now you have a basic idea of the effect of the window width on what
+you are viewing, have a play with adjusting it.  Press 'w', and use
+the digits 0-9.
+
+Have a look at some of the test files, for example 'log001.dat' from
+Jim Meissner.  This file in particular is good to look at as it
+contains stable tones, sweeps, as well as various types of modulation
+(EXAMPLES.TXT contains some additional notes on these files).  At one
+point in that file there is some amplitude modulation of a carrier.
+By changing the window width 'w', you can change the display to show
+this signal either as the individual pulses or as a carrier and
+side-bands!  These are both valid interpretations of the data.
+
+Remember, if you find something interesting or unusual in a file, it
+is worth looking at it with a few different window widths.  That way
+you're likely to have a better understanding of what you're seeing in
+front of you.
+
+The other settings you will need to use are as follows: 'n' allows you
+to adjust the number of octaves displayed on the screen, i.e. the
+frequency range in the left margin.  'o' allows you to change the top
+octave, i.e. the highest frequency shown, which is also adjusted by
+the up/down keys.  'c' allows you to change between different channels
+if the input file has more than one.  't' lets you change the
+time-base, which lets you fit more into the screen horizontally.  'f'
+allows you to change the font size.  'm' allows you to change the
+display mode.
+
+Here are a summary of the display modes currently available with the
+'m' setting:
+
+m1: Greyscale display of magnitude.
+
+m4: Colour display of magnitude -- the magnitude is mapped to a range
+    of colours which makes it easier to see areas of similar
+    magnitude in the display.  The brightness setting ('b') controls 
+    the display just as for 'm1'.
+
+m3,m5: A 'sideways waterfall' display, with magnitude controlling both
+    colour and 'elevation' of the peaks.  m3 is left-leaning, m5 is
+    right-leaning.
+
+m2,m6: Another colour 'sideways waterfall' display, only this is
+    sliced up every 8 pixels to make the shape of the contours more
+    obvious.  Again there are left and right-leaning versions so you
+    can look behind tall peaks if necessary.  
+
+m7,m8: Two experimental displays using phase information to enhance
+    the display.  See NEWS.TXT for details.
+
+
+Command-line arguments
+----------------------
+
+Run 'bwview' with no arguments to see an up-to-date summary of all the
+options.  Also run 'bwview -f' to see the current list of supported
+file formats.
+
+The simplest command-line includes just the format of the file and the
+filename itself.  For example:
+
+  bwview jm4/130 example.dat
+
+This opens a window and enters the program.  Use 'shift-Q' to quit.
+If you want to run the program full-screen, then you need to use the
+-F option.  This requires a screen-size as specification.  Here are
+some examples:
+
+  bwview -F 640x480x16 jm4/130 example.dat
+  bwview -F 800x600x32 jm4/130 example.dat
+  bwview -F 1024x768x16 jm4/130 example.dat
+
+Note that the last part of the screen-size is either x16 or x32.
+'x16' gives a 16-bit display (32768 or 65536 colours).  'x32' gives a
+24-bit display (16 million colours).  If the screen size is not
+available, then you will either get an error message, or the SDL
+library will emulate the mode for you somehow.
+
+If you do not wish to run full-screen, you can set the initial size of
+the window using -W, for example:
+
+  bwview -W 900x600 jm4/130 example.dat
+
+You can also supply settings on the command-line using the -c option.
+For example, if you wanted to use 1024x768 full-screen, switching to
+display mode six and a 4-octave frequency range automatically, use
+this:
+
+  bwview -F 1024x768x16 -c f2n4 jm4/130 example.dat
+
+You can use any sequence of letters and digits, as well as '+' and '-'
+in this string, just as you would when using the program directly.
+Note that it is also possible to preload settings using the config
+file (see below).
+
+
+Notes on some of the supported file formats
+-------------------------------------------
+
+'jm2' and 'jm4' are 2 and 4-channel Jim Meissner files, with one 0x03
+sync byte followed by 2 or 4 unsigned data bytes.  Sync loss can be
+detected thanks to the sync bytes.
+
+'bm1' and 'bm2' are 1 and 2-channel BrainMaster files at 120Hz.  The
+1-channel file is just the same as raw/120:b, except 'bm1' is more
+convenient.  The two-channel version has a sync byte, permitting sync
+errors to be detected.
+
+'mod' support 6-channel modularEEG files as output by the modularEEG
+design from the OpenEEG project (openeeg.sf.net).  Follow it by the
+sampling rate, which is normally 256Hz: 'mod/256'.  The channels
+appear as 'c1' to 'c6'.  The four digital outputs also appear as
+channels 7 to 10.  
+
+'mod0' supports the old (pre Apr-2003) modularEEG data format, but is
+the same as 'mod' otherwise.
+
+'raw' allows raw files of various formats to be read.  The spec
+consists of a sample-rate and a format-spec, for example
+'raw/256:ssss'.  There is no detection of sync-loss.
+
+The format-spec is made up of characters, each of which consumes bytes
+in the input file.  All except '_' (which represents dummy bytes) also
+represent different channels in the input file.  The format characters
+are:
+
+  _    Dummy byte (byte is skipped and ignored)
+  b    Unsigned byte
+  w,W  Little and big-endian unsigned 2-byte words
+  c    Signed byte (aka 'char' in C)
+  s,S  Little and big-endian signed 2-byte words (aka 'short' in C)
+  f    Machine-format 32-bit floating point number
+
+For example 'raw/128:_bbbb' could be used to read a 'jm4' file above,
+assuming the sync was perfect all the way through the file.
+'raw/128:ss' can be used to read 16-bit headerless stereo sound files.
+
+It is fairly easy to add support for other file formats -- programmers
+can see the file "src/file_formats.inc" for instructions.  Please let
+me have the source code for any new formats you add so that I can
+incorporate them into the main release.
+
+
+Adjusting presets in the configuration file
+-------------------------------------------
+
+All of the presets accessed by using the letter keys followed by
+digits in the main program can be adjusted in the configuration file
+'bwview.cfg'.  This is useful if you find that the presets don't suit
+the values that you use most often.  It is also possible to set up an
+initial set of presets that will be used when the program starts.
+
+The file is a plain-text file.  Lines starting with '#' are taken as
+comments, and blank lines are ignored.  A preset line consists of the
+preset name (e.g. 's6') followed by white space and the value for that
+preset.  There should be nothing else on the line.
+
+The initial setup is specified using a line consisting of 'init'
+followed by white space and the startup string enclosed in double
+quotes, for example:
+
+  init "f2t4n6o2b6s9--"
+
+Within the string, all letters, digits and +/- keys may be used
+exactly as in the main program.
+
+
+Wisdom file
+-----------
+
+The FFT engine used in this program "FFTW" (see www.fftw.org) can be
+optimised for your particular processor and system.  To do this, press
+'O' (shift-O) within the main program.  After some time, this will
+finish, and a 'wisdom' file "bwview.wis" will have been created on
+your disk.  This wisdom will be loaded up whenever you run the program
+again, so you won't need to optimise the engine again.  However, if
+you do move to a new machine, it would be a good idea to re-optimise
+the engine and/or delete the wisdom file.
+
+Note that this optimisation step isn't 100% necessary -- FFTW performs
+very well in any case.
+
+
+Features for experimenters and filterbank designers
+---------------------------------------------------
+
+By invoking BWView with the -x option, two further Window functions
+become available.  The 'x' setting switches between them (x1,x2,x3).
+These additional windows are based on IIR low-pass filters.  These are
+quick to execute, and are suitable for real-time use as a filterbank.
+I put them into BWView to allow me to better understand their
+behaviour, and to select suitable parameters for building filterbanks.
+
+The two filters are as follows:
+
+'x2': IIR with Q=0.5.  This Q-factor gives the fullest bell-shaped
+frequency response curve without the window tail ever crossing zero.
+
+'x3': IIR with Q=0.72.  This Q-factor gives the squarest frequency
+response peak, without there being a dip in the middle of the
+response.  However, the window tail does cross the zero line (although
+I don't how that might be significant).
+
+By clicking on the main area, as usual, the window shape can be seen
+and comparisons made between the different windows.  Note that the IIR
+filters are not symmetrical, and so features in the main display are
+delayed in time compared to the original signal.  The delay becomes
+noticeable and significant for lower frequencies.
+
+The 'window-width' can be varied as for the Blackman window.  Since
+these IIR windows never actually end, the window-width is taken to be
+the width that contains 95% of the volume between the curve and the
+axis.  The IIR window is *not* truncated at the point (as you can
+see).  For the purposes of calculation, the 99.9% point is used
+(i.e. expect values to be correct to 3 significant figures).
+
+
+Script for modularEEG users
+---------------------------
+
+The 'rec-modeeg' script allows Linux users to easily record from the
+modularEEG and start a BWView session running, automatically set to
+follow the end of the data as it is written.  Run it with no arguments
+if your serial device is /dev/ttyS0, or else give it the serial device
+as the first argument.  See the script itself for more details.
+
+
+// END //

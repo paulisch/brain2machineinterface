@@ -1,0 +1,77 @@
+Building on Win32
+-----------------
+
+Please note that building the BWVIEW executable is only necessary if
+you wish to make source-code changes.  If you just want to run the
+program, please pick up a binary ZIP file for Windows from my site:
+
+  http://uazu.net/bwview/
+
+You can probably build the app using other tools, but I used the
+excellent MinGW and MSYS, both available for free download from here:
+
+  http://www.mingw.org/
+
+Follow the instructions, and get MSYS and MinGW working on your
+machine.  You'll probably need an unpacker that can handle .tar.gz
+archives.  I put my 'mingw' directory inside the MSYS root, which
+means it was c:\msys\1.0\mingw, with bin, include and so on within
+that directory.  MSYS 1.0 was already set up with the PATH pointing
+into these directories.
+
+Next you need the FFTW sources.  Download them from this location:
+
+  http://www.fftw.org/
+
+Unpack them into a suitable directory (I was using /home/unknown,
+which is actually C:\msys\1.0\home\unknown), and run the configure
+script with the following options:
+
+  ./configure --enable-float --enable-type-prefix
+
+FFTW can then be built as follows:
+
+  make clean
+  make 			(fails)
+  cd rfftw
+  make			(fails)
+
+I found that this build drops dead at the point of putting the objects
+together into libraries.  However, the objects all build fine, so
+rather than try and debug the configure script, Makefile and/or MSYS
+tool-set, I chose to work around this problem by linking in all the
+objects manually in the mk-mingw script.
+
+*** This is a bodge, I admit, and needs fixing ***
+
+
+You also need the SDL 1.2 include files and libraries.  See:
+
+  http://www.libsdl.org/
+
+I installed them in these directories:
+
+  C:\msys\1.0\mingw\include
+  C:\msys\1.0\mingw\include\SDL
+  C:\msys\1.0\mingw\lib
+
+
+All that remains is to unpack the bwview source into the same home
+directory (e.g. /home/unknown in my case), and to run the ./mk-mingw
+script from the src/ directory.  This assumes that the FFTW libraries
+were unpacked into the same home directory, and that the FFTW version
+was 2.1.3.  You'll need to edit the script if you have a different
+setup.
+
+Hopefully I have not forgotten anything in this description.
+
+Yes, this is all a bit of a bodge, but it will do for now.
+
+
+Jim
+
+--
+ Jim Peters                  (_)/=\~/_(_)                 jim@uazu.net
+                          (_)  /=\  ~/_  (_)
+ Uaz£                  (_)    /=\    ~/_    (_)                http://
+ B'ham, UK          (_) ____ /=\ ____ ~/_ ____ (_)            uazu.net

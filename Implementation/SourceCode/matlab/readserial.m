@@ -1,9 +1,10 @@
+function [resultData] = readserial(port, durationSeconds)
+
 if ~isempty(instrfind)
      fclose(instrfind);
-      delete(instrfind);
+     delete(instrfind);
 end
 
-port = 'COM1';
 Baud_Rate = 57600; %9600
 Data_Bits = 8;
 Stop_Bits = 1;
@@ -14,16 +15,18 @@ COUNTER_POS = 4;
 
 samplingrate = 256; %Hz
 BYTES_PACK = 17;
-NPACKETS = samplingrate * 1;
+NPACKETS = samplingrate * durationSeconds;
 NBYTESREAD = BYTES_PACK * NPACKETS;
 NELECTRODESSIGNALS = 6;
 
 data = zeros(NBYTESREAD, 1);
 
+t0 = clock;
 %Read data
 for n = 1:NBYTESREAD
     data(n) = fread(device, 1);
 end
+ms = round(etime(clock,t0) * 1000);
 
 %Extract 17 plots
 parseddata = zeros(BYTES_PACK, NPACKETS);
@@ -81,31 +84,8 @@ for l = 1:NELECTRODESSIGNALS
     end
 end
 
-%Plot results
-figure;
-for n = 1:BYTES_PACK
-    subplot(5,4,n);
-    plot(parseddata(n, :));
-end
-
-%Plot results
-%figure;
-%for n = 1:NELECTRODESSIGNALS
-%    subplot(2,3,n);
-%    plot(trace(n, :));
-%end
-
-%figure;
-%for n = 1:NELECTRODESSIGNALS
-%    trace(n, :) = detrend(trace(n, :), 0);
-%    myfft = fft(trace(n, :));
-%    freq = 0:cols/length(trace(n, :)):cols/2;
-%    myfft = myfft(1:length(trace(n, :))/2+1);
-%    subplot(2,3,n);
-%    %plot(real(myfft));
-%    plot(freq, abs(myfft));
-%    %plot(trace(n, :));
-%    %max(abs(myfft));
-%end
-
 fclose(device);
+
+resultData = trace;
+
+end

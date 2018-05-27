@@ -1,0 +1,27 @@
+Notes on example files
+----------------------
+
+Both log001.dat and example.dat were derived from files provided by
+Jim Meissner:
+
+  http://www.MeissnerResearch.com/
+
+
+"log001.dat" contains test signals designed to test how various kinds
+of signal changes and modulation are detected by different analysis
+methods.
+
+"example.dat" is an excerpt of the file "downey.dat" which is
+available from Jim Meissner's site.  It is a historical recording of a
+gifted psychic in action.  Pick up the original file from Jim
+Meissner's site for the entire recording, and for additional notes on
+this session.
+
+
+These files can be viewed with the follow options:
+
+  bwview jm2/140 log001.dat
+  bwview jm4/130 example.dat
+
+
+// END //

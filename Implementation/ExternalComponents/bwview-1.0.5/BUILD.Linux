@@ -1,0 +1,38 @@
+Building on Linux
+-----------------
+
+See my web-site for the latest version of this tool:
+
+  http://uazu.net/bwview/
+
+To build this tool you will need both the FFTW and SDL 1.2 libraries.
+Please download an install them from the following locations:
+
+  http://www.fftw.org/
+  http://www.libsdl.org/
+
+(It is most probably possible to install one or both of these using
+packages created for your distribution, rather than building them
+yourself.  For FFTW you will need to make sure you install the
+single-precision version (sfftw), though.)
+
+When you build FFTW, please configure it using one of the following
+command-lines:
+
+  ./configure --enable-float --enable-type-prefix
+  ./configure --enable-float --enable-type-prefix --enable-shared
+
+The important bits are --enable-float and --enable-type-prefix.  These
+are required because I use the 32-bit floating point version of the
+library, rather than the default 64-bit one, to save memory.  Using
+these options builds the versions with different prefixes on the
+headers and libraries.  This is more compatible with the pre-packaged
+version of FFTW that might come with distributions, or with building
+other tools that might require the 64-bit versions.
+
+With all that in place, building the tool should be as simple as
+typing ./mk in the bwview/src/ directory.  If that doesn't work, you
+know where I can be contacted!
+
+Jim <jim@uazu.net>
+

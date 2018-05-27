@@ -1,0 +1,17 @@
+#!/usr/bin/perl -w
+
+print "Usage: mk-test-float <freq> [<amp>]" unless @ARGV;
+
+$rate= 256;
+$freq= (shift) / $rate;
+$amp= @ARGV ? shift() : 1.0;
+$PI= 2 * atan2(1,0);
+
+die unless open OUT, ">test.dat";
+
+for (0..65535) {
+    my $val= $amp * sin($_ * $freq * $PI * 2);
+    print OUT pack("f", $val);
+}
+
+print "Use: bwview raw/$rate:f test.dat\n";

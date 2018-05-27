@@ -1,0 +1,114 @@
+1.0.4
+
+Added BrainMaster 2E format handlers: "bm1" and "bm2".
+
+---
+
+1.0.3
+
+Added modularEEG data packet handler (mod/256).  Added 'q' and ESC as
+valid exit keys.  Made END key position the end of the file 7/8 of the
+way across the screen.  Added 'follow' mode that updates the display
+to the end of the file every second when active ('F' key).  Added
+'rec-modeeg' script that permits easier monitoring of modularEEG
+devices on Linux.
+
+---
+
+1.0.2
+
+Minor changes.  Key repeat is enabled, allowing easier brightness
+changes and navigation.  HOME and END keys move to start/end of file.
+These changes were suggested by Jack Spaar.  Also, peak frequency is
+now displayed, through a simple search for the nearest peak in
+magnitude (no fancy phase stuff).
+
+---
+
+1.0.1
+
+Bug-fix release.  This fixes a bug found by Dave Fisher.  For
+high-amplitude input, strange lines would appear across the display.
+This was caused by an element of one of the FFT buffers not being
+initialised properly.  The fix also cleans up some of the rubbish that
+used to appear around the Nyquist frequency.
+
+---
+
+1.0.0
+
+First 'stable' release, although it has been stable for ages.
+
+It is now possible to 'follow' a file whilst it is being written.
+Pressing '.' causes BWView to recheck the file to see if any further
+data has been written.  In this way you can analyse a session at the
+same time that it is being recorded by another program, paging
+backwards and forwards, and so on, independently of the recording
+process.
+
+If started with the -x option, two additional types of window are now
+available.  These are based on IIR low-pass filters.  These do not
+give much benefit for analysis, but rather they are here to test the
+filters and compare them against the Blackman window.  The advantage
+of the IIR filters is that they run very fast and can be used in
+real-time, as a filterbank.  The disadvantages can be the asymmetry of
+the window, and its long tail.
+
+With -x, then the 'x' setting appears.  'x1' is the default Blackman
+window.  'x2' gives IIR with Q=0.5, and 'x3' gives IIR with Q=0.72.
+The significance of Q=0.5 is that this is the largest Q for which the
+tail doesn't cross 0, and Q=0.72 gives the squarest frequency response
+without a dip in the middle at the top.
+
+Clicking on a point shows the window used to calculate that point just
+as before, so you can see the shape of the windows produced by the IIR
+filters.
+
+---
+
+0.1.1 New features to try:
+
+New modes: m2, m3, m4, m5, m6, m7, m8.  Currently defaults to m4
+
+m4: The same as m1 (i.e. a pure magnitude display), except rendered
+using colours to map different levels of intensity.  This works
+better, because you get some visual comparison between levels of
+similar magnitude.
+
+m3, m5: As m4, except the magnitude controls the 'elevation', giving
+something like a sideways waterfall display.  m3 gives a view from the
+right, m5 from the left.  This displays exactly the same detail as m4,
+so the shapes are completely smooth.
+
+m2, m6: As m3+m5, except that elevations are only drawn every 8
+pixels, showing the maximum value within that range.  This gives a
+contoured effect that makes it much easier to see the shape of
+'low-lying hills'.  However, a lot of detail is lost.
+
+m7: Adds hues to the m1 display, using hue to indicate how much the
+phase is shifting at that point.  If the phase is changing, this
+indicates that we're close but not actually on the centre-frequency of
+the signal.  The cyan areas are closest, and then it goes in the order
+green..red..blue.  By watching the cyan areas, you should be able to
+track the centre of the tone.
+
+m8: Uses the phase shift information to instead reduce the displayed
+level of non-in-phase areas.  This has the effect of sharpening up the
+display.  However, it also makes it more sensitive to fluctuations.
+
+[ I'm not sure about the usefulness of m7 and m8.  I might drop these
+two displays, unless someone finds them useful in some way. ]
+
+New -W option to allow setting the initial window size from the
+command-line.
+
+Font automatically adjusts according to window width.  
+
+Signal display: s1 now gives full-scale for -1 to +1 signals (which is
+full-scale for all integer data types).
+
+Magnitude levels: reading the magnitude using the cursor appears to
+give reasonably accurate values (3sf at least).  The magnitude
+read-out gives the correct amplitude level for pure sine waves.  (So a
+full-scale integer sine-wave test tone gives a reading of 1.0).
+
