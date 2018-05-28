@@ -21,12 +21,24 @@ NELECTRODESSIGNALS = 6;
 
 data = zeros(NBYTESREAD, 1);
 
+beep on;
+beep;
+pause(1);
+beep;
+pause(1);
+beep;
+
 t0 = clock;
 %Read data
+disp('Start reading');
 for n = 1:NBYTESREAD
     data(n) = fread(device, 1);
 end
 ms = round(etime(clock,t0) * 1000);
+disp(strcat('Stop reading: ', num2str(ms), 'ms'));
+
+beep;
+beep off;
 
 %Extract 17 plots
 parseddata = zeros(BYTES_PACK, NPACKETS);
