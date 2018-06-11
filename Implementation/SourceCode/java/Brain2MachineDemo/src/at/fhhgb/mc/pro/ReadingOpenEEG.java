@@ -226,7 +226,7 @@ public class ReadingOpenEEG {
         {
             this.holder = holder;
             this.holder.runReadingThread = true;
-            this.in = in;                        
+            this.in = in;
         }        
         
         public void run ()
@@ -244,7 +244,7 @@ public class ReadingOpenEEG {
             catch ( IOException e )
             {
                 System.err.println(e.getStackTrace());
-            }         
+            }
         }
     }
     

@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>A first look at the Olimex EEG-SMT | Daniel's Visionarium</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://bakerdh.wordpress.com/xmlrpc.php">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="alternate" type="application/rss+xml" title="Daniel&#39;s Visionarium » Feed" href="https://bakerdh.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Daniel&#39;s Visionarium » Comments Feed" href="https://bakerdh.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Daniel&#39;s Visionarium » A first look at the Olimex EEG-SMT Comments Feed" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s2.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1516999477h&ver=4.9.7-alpha-43298"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/wp-emoji-release.min.js.Download" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="all-css-0-1" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(1)" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1-1" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2-1" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(2)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(3)"></script>
+<link rel="stylesheet" id="all-css-0-2" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/style(1).css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://bakerdh.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="New job, first month" href="https://bakerdh.wordpress.com/2013/01/27/new-job-first-month/">
+<link rel="next" title="Why can some people’s brains see better than others’?" href="https://bakerdh.wordpress.com/2013/07/28/why-can-some-peoples-brains-see-better-than-others/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/">
+<link rel="shortlink" href="https://wp.me/p1wQGz-3e">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="A first look at the Olimex EEG-SMT">
+<meta property="og:url" content="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/">
+<meta property="og:description" content="Last week I ordered and received a small EEG device manufactured by a Bulgarian company called Olimex. Called the EEG-SMT, it is part of the OpenEEG project, and is a small USB device that looks li…">
+<meta property="article:published_time" content="2013-01-31T16:01:09+00:00">
+<meta property="article:modified_time" content="2013-01-31T16:01:09+00:00">
+<meta property="og:site_name" content="Daniel&#39;s Visionarium">
+<meta property="og:image" content="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=450">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@wordpressdotcom">
+<meta name="twitter:text:title" content="A first look at the Olimex EEG-SMT">
+<meta name="twitter:card" content="summary">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+
+<!-- End Jetpack Open Graph Tags -->
+<link rel="shortcut icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="icon" type="image/x-icon" href="https://s1.wp.com/i/favicon.ico" sizes="16x16 24x24 32x32 48x48">
+<link rel="apple-touch-icon-precomposed" href="https://s2.wp.com/i/webclip.png">
+<link rel="openid.server" href="https://bakerdh.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://bakerdh.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://bakerdh.wordpress.com/osd.xml" title="Daniel&#39;s Visionarium">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<style type="text/css">
+.widget_twitter li {
+	word-wrap: break-word;
+}
+</style>
+<meta name="application-name" content="Daniel&#39;s Visionarium"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="A blog about visual perception"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://bakerdh.wordpress.com/feed/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s1.wp.com/i/favicon.ico"><meta name="description" content="Last week I ordered and received a small EEG device manufactured by a Bulgarian company called Olimex. Called the EEG-SMT, it is part of the OpenEEG project, and is a small USB device that looks like this: It has five audio jacks for connecting custom electrodes. The ground electrode is passive, and the other four…">
+<style type="text/css">
+#headerimg{
+	background: url(https://s2.wp.com/wp-content/themes/pub/contempt/images/blue_flower/head.jpg) no-repeat;
+}
+#header h1 a, .description {
+	color:#E5F2E9;
+}
+</style>
+		<script type="text/javascript">
+		var __ATA_PP = { pt: 1, ht: 0, tn: 'contempt', amp: false, siteid: 8982, consent: 1 };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/head.js.Download" async=""></script><link rel="amphtml" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/amp/"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ga.js.Download"></script>
+<style type="text/css"></style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/services.css"><script type="text/javascript" async="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(4)"></script><script type="text/javascript" async="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/Consent_A_de.js.Download"></script><script type="text/javascript" async="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(5)"></script><script src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/bad.txt" type="text/javascript"></script></head>
+<body class="post-template-default single single-post postid-200 single-format-standard mp6 customizer-styles-applied highlander-enabled highlander-light">
+
+<div id="page">
+
+<div id="header">
+	<div id="headerimg" onclick="location.href=&#39;https://bakerdh.wordpress.com&#39;;" style="cursor: pointer;">
+		<h1><a href="https://bakerdh.wordpress.com/">Daniel's Visionarium</a></h1>
+		<div class="description">A blog about visual perception</div>
+	</div>
+</div>
+
+<ul id="pagebar" class="menu pagebar"><li><a href="https://bakerdh.wordpress.com/">Home</a></li><li class="page_item page-item-35"><a href="https://bakerdh.wordpress.com/abstracts/">1. People</a></li>
+<li class="page_item page-item-32"><a href="https://bakerdh.wordpress.com/publications/">2. Publications</a></li>
+<li class="page_item page-item-2"><a href="https://bakerdh.wordpress.com/abstracts-2/">3. Abstracts</a></li>
+</ul>
+
+<div id="grad" style="height: 65px; width: 100%; background: url(https://s2.wp.com/wp-content/themes/pub/contempt/images/blue_flower/topgrad.jpg);">&nbsp;</div>
+
+	<div id="content" class="widecolumn">
+
+  
+
+
+		<div class="post-200 post type-post status-publish format-standard hentry category-methods category-vision" id="post-200">
+			<h2>A first look at the Olimex&nbsp;EEG-SMT</h2>
+
+			<div class="entry">
+				<p>Last week I ordered and received a small <a title="Wikipedia article on EEG" href="http://en.wikipedia.org/wiki/Electroencephalography">EEG</a> device manufactured by a Bulgarian company called <a title="Link to Olimex website" href="https://www.olimex.com/">Olimex</a>. Called the <a title="Device website" href="https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/">EEG-SMT</a>, it is part of the <a title="OpenEEG project" href="http://openeeg.sourceforge.net/doc/">OpenEEG</a> project, and is a small USB device that looks like this:</p>
+<div data-shortcode="caption" id="attachment_201" style="width: 460px" class="wp-caption aligncenter"><a href="https://bakerdh.files.wordpress.com/2013/01/olimex.jpg"><img data-attachment-id="201" data-permalink="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/olimex/" data-orig-file="https://bakerdh.files.wordpress.com/2013/01/olimex.jpg" data-orig-size="2559,1835" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="Olimex" data-image-description="" data-medium-file="https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=300" data-large-file="https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=450&amp;h=322" class="size-large wp-image-201" alt="The Olimex EEG device." src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/olimex.jpg" width="450" height="322" srcset="https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=450&amp;h=322 450w, https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=898&amp;h=644 898w, https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=150&amp;h=108 150w, https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=300&amp;h=215 300w, https://bakerdh.files.wordpress.com/2013/01/olimex.jpg?w=768&amp;h=551 768w" sizes="(max-width: 450px) 100vw, 450px"></a><p class="wp-caption-text">The Olimex EEG device.</p></div>
+<p>It has five audio jacks for connecting custom <a title="Electrodes for the device" href="https://www.olimex.com/Products/EEG/Electrodes/EEG-AE/">electrodes</a>. The ground electrode is passive, and the other four electrodes are active and comprise two bipolar channels. The system is very basic, and at around €150 (including the electrodes) is obviously not going to compete with high end multi-channel EEG rigs.&nbsp; But, I’m interested in running some <a title="Short article on SSVEP" href="http://en.wikipedia.org/wiki/Steady_state_visually_evoked_potential">steady state VEP</a> experiments that can be run with a single channel, and in principle are quite robust to lower signal to noise ratios from lower quality equipment. Given the price, I thought it was worth a shot.</p>
+<p>Although there are several PC packages capable of reading data from the device, I ideally want to integrate EEG recording into the <a title="Matlab article" href="http://en.wikipedia.org/wiki/MATLAB">Matlab</a> code I use for running experiments. So, I decided to try and directly poll the USB interface.</p>
+<p>The first stage was to install a driver for the device. I’m using a Mac running OSX 10.8, so I went with the <a title="Link to driver download page" href="http://www.ftdichip.com/Drivers/VCP.htm">FDTI virtual COM port driver</a>. I also found it useful to check the device was working with this <a title="Serial port tool for OSX" href="http://www.w7ay.net/site/Applications/Serial%20Tools/index.html">serial port tool</a>. The driver creates a virtual serial port, the location of which can be discovered by opening a Terminal window and entering:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; ls -l /dev/tty.*</span></p>
+<p>On my machine this lists a couple of bluetooth devices, as well as the serial address of the Olimex device:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; /dev/tty.usbserial-A9014SQP</span></p>
+<p>Matlab has its own tool for polling serial ports (<a title="Intro to Matlab&#39;s serial interface functions" href="http://www.mathworks.co.uk/help/matlab/matlab_external/getting-started-with-serial-i-o.html">Serial</a>). I was able to read from the device this way, but I found it less flexible than the IOPort function that comes with <a title="Psychtoolbox" href="http://psychtoolbox.org/HomePage">Psychtoolbox</a> 3. The rest of this post uses that function.</p>
+<p>First we open the serial port and give it a handle:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; [h,e] = IOPort(‘OpenSerialPort’,’/dev/tty.usbserial-A9014SQP’);</span></p>
+<p>Then we can set a few parameters, including the baud rate for data transmission, buffer size etc:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’BaudRate=57600′);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’BlockingBackgroundRead=0′);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’InputBufferSize=65536′);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’PollLatency=0.0039′);</span></p>
+<p>To start recording, we purge the buffer and then send this command.</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘Purge’,h);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’StartBackgroundRead=1′);</span></p>
+<p>We wait for a while, then we check how much data is waiting for us in the buffer and read it out into a vector:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; WaitSecs(3);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; bytestoget = IOPort(‘BytesAvailable’,h)</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; [longdata,when,e] = IOPort(‘Read’,h,1,bytestoget);</span></p>
+<p>Finally, we stop recording, purge the buffer and close the port:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘ConfigureSerialPort’,h,’StopBackgroundRead’);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘Purge’,h);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; IOPort(‘Close’,h);</span></p>
+<p>I had some trouble initially streaming data from the device. If you forget to purge the buffer it can cause your entire system (not just Matlab) to hang and restart. This is very annoying, and slows development progress.</p>
+<p>Now that we have some data, we need to process it. The vector is a stream of bytes in packets of 17. We can separate it out like this:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp;&nbsp; for n = 1:17</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; parseddata(n,:) = longdata(n:17:end);</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; end</span></p>
+<p>And plot each signal separately:</p>
+<div data-shortcode="caption" id="attachment_202" style="width: 460px" class="wp-caption aligncenter"><a href="https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg"><img data-attachment-id="202" data-permalink="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/eeg1/" data-orig-file="https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg" data-orig-size="737,896" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="EEG1" data-image-description="" data-medium-file="https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg?w=247" data-large-file="https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg?w=450" class="size-large wp-image-202" alt="Outputs from the Olimex serial interface" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/eeg1.jpg" srcset="https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg?w=450&amp;h=547 450w, https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg?w=123&amp;h=150 123w, https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg?w=247&amp;h=300 247w, https://bakerdh.files.wordpress.com/2013/01/eeg1.jpg 737w" sizes="(max-width: 450px) 100vw, 450px"></a><p class="wp-caption-text">Outputs from the Olimex serial interface</p></div>
+<p>According to the device’s <a title="Link to firmware v2 for ModEEG" href="http://openeeg.sourceforge.net/doc/modeeg/firmware/modeeg-p2.c">firmware</a>, the first two plots are control lines that always output values of 165 and 90. This provides an anchor that lets us know the order of the signals. The next plot tells us the firmware version (version 2), and the fourth plot is a sample counter that increases by 1 each time the device samples the electrodes. The sampling happens at a fixed frequency of 256Hz, so 256 samples represent one second of activity. Plots 5-16 are the outputs of the electrodes (this is what we’re interested in), and I don’t really understand plot 17 yet.</p>
+<p>Each channel gets 2 <a title="Article explaining bytes" href="http://en.wikipedia.org/wiki/Byte">bytes</a> (e.g. 16 <a title="Article explaining bits" href="http://en.wikipedia.org/wiki/Bit">bits</a>), but only uses 10 of those bits. This means that to get the actual output, we need to combine the data from two adjacent bytes (paired by colour in the above plots). The data are in big-<a title="Article explaining endianness" href="http://en.wikipedia.org/wiki/Endianness">endian</a> format, which means that the first byte contains the most significant bits, and the second byte the least significant. We can combine them by converting each byte to binary notation, sticking them together, and then converting back:</p>
+<p><span style="color:#339966;">&nbsp;&nbsp; for l = 1:6</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; for m = 1:length(parseddata)</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; trace(l,m)&nbsp; = bin2dec(strcat(dec2bin(parseddata(lineID(l,1),m)),dec2bin(parseddata(lineID(l,2),m))))./1023;</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; end</span><br>
+<span style="color:#339966;">&nbsp;&nbsp;&nbsp; end</span></p>
+<p>We now have six ten bit signals, which we can plot as follows:</p>
+<div data-shortcode="caption" id="attachment_203" style="width: 460px" class="wp-caption aligncenter"><a href="https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg"><img data-attachment-id="203" data-permalink="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/eeg2/" data-orig-file="https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg" data-orig-size="1295,718" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="EEG2" data-image-description="" data-medium-file="https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=300" data-large-file="https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=450&amp;h=249" class="size-large wp-image-203" alt="Channel outputs" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/eeg2.jpg" width="450" height="249" srcset="https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=450&amp;h=249 450w, https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=898&amp;h=498 898w, https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=150&amp;h=83 150w, https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=300&amp;h=166 300w, https://bakerdh.files.wordpress.com/2013/01/eeg2.jpg?w=768&amp;h=426 768w" sizes="(max-width: 450px) 100vw, 450px"></a><p class="wp-caption-text">Channel outputs</p></div>
+<p>Although the waveforms look exciting, they aren’t very informative because most of what we’re seeing is an artefact from the ‘hum’ of AC mains electricity. We can see this if we examine the <a title="Article explaining fourier transforms" href="http://en.wikipedia.org/wiki/Fourier_transform">Fourier spectrum</a> of one of our waveforms:</p>
+<div data-shortcode="caption" id="attachment_204" style="width: 460px" class="wp-caption aligncenter"><a href="https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg"><img data-attachment-id="204" data-permalink="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/eeg3/" data-orig-file="https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg" data-orig-size="560,420" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="EEG3" data-image-description="" data-medium-file="https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg?w=300" data-large-file="https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg?w=450&amp;h=337" class="size-large wp-image-204" alt="Example EEG fourier spectrum" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/eeg3.jpg" width="450" height="337" srcset="https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg?w=450&amp;h=337 450w, https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg?w=150&amp;h=113 150w, https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg?w=300&amp;h=225 300w, https://bakerdh.files.wordpress.com/2013/01/eeg3.jpg 560w" sizes="(max-width: 450px) 100vw, 450px"></a><p class="wp-caption-text">Example EEG fourier spectrum</p></div>
+<p>It is clear that much of the energy is concentrated at 0, and at 50Hz. We can remove these using a bandpass filter, that includes only frequencies between (approximately) 1 and 49Hz. Taking the inverse Fourier transform then gives us a more sensible waveform:</p>
+<div data-shortcode="caption" id="attachment_205" style="width: 460px" class="wp-caption aligncenter"><a href="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg"><img data-attachment-id="205" data-permalink="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/eeg4/" data-orig-file="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg" data-orig-size="561,420" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="EEG4" data-image-description="" data-medium-file="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=300" data-large-file="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=450&amp;h=336" class="size-large wp-image-205" alt="Bandpass filtered waveform" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/eeg4.jpg" width="450" height="336" srcset="https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=450&amp;h=336 450w, https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=150&amp;h=112 150w, https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg?w=300&amp;h=225 300w, https://bakerdh.files.wordpress.com/2013/01/eeg4.jpg 561w" sizes="(max-width: 450px) 100vw, 450px"></a><p class="wp-caption-text">Bandpass filtered waveform</p></div>
+<p>Actually though, I’m more interested in what is happening in the frequency domain. This is because I want to run experiments to measure the response of visual cortex to gratings flickering at a particular frequency. However, there are some problems to overcome first. Critically, I don’t understand how the four active electrodes on the device map onto the six channel outputs that I read over the serial connection. They all seem to produce a signal, and my initial thought was that the first four must be the outputs of individual electrodes, and the final two the differences between positive and negative electrodes for channels 1 &amp; 2. As far as I can tell, that isn’t what’s actually happening though. I have posted on the <a title="Home page of the mailing list" href="https://lists.sourceforge.net/lists/listinfo/openeeg-list">OpenEEG mailing list</a>, so hopefully someone with experience of using these devices will get back to me.</p>
+<p>If anyone is interested, I have put a version of the code outlined above <a title="Example matlab code" href="https://dl.dropbox.com/u/4604900/plotfromserial.m">here</a> (with a few extra bells and whistles). Note that it may require some modifications on your system, particularly the serial address of the device. You will also need to have <a title="Matlab homepage" href="http://www.mathworks.co.uk/">Matlab</a> (or maybe <a title="Octave homepage" href="http://www.gnu.org/software/octave/">Octave</a>), <a title="Psychtoolbox" href="http://psychtoolbox.org/HomePage">Psychtoolbox</a> and the <a title="Driver software" href="http://www.ftdichip.com/Drivers/VCP.htm">driver software</a> installed. Finally, your system may hang if there are problems, and I hereby absolve myself of responsibility for any damage, loss, electrocution etc. that results in you using my code. However, I’d be very interested to hear from anyone else using one of these devices!</p>
+<div id="atatags-370373-5b1e5b1cb2afa">
+        <script type="text/javascript">
+            __ATA.cmd.push(function() {
+                __ATA.initVideoSlot('atatags-370373-5b1e5b1cb2afa', {
+                    sectionId: '370373',
+                    format: 'inread'
+                });
+            });
+        </script>
+    </div>		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">		<div style="padding-bottom:15px;width:300px;height:250px;float:left;margin-right:5px;margin-top:0px">
+		<div id="atatags-26942-5b1e5b1cb2b25">
+			<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initSlot('atatags-26942-5b1e5b1cb2b25',  {
+					collapseEmpty: 'before',
+					sectionId: '26942',
+					width: 300,
+					height: 250
+				});
+			});
+			</script>
+		</div></div>		<div style="padding-bottom:15px;width:300px;height:250px;float:left;margin-top:0px">
+		<div id="atatags-114160-5b1e5b1cb2b27">
+			<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initSlot('atatags-114160-5b1e5b1cb2b27',  {
+					collapseEmpty: 'before',
+					sectionId: '114160',
+					width: 300,
+					height: 250
+				});
+			});
+			</script>
+		</div></div></div>
+				
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled"><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-22605359-200-5b1e5b1cb49ec" data-src="//widgets.wp.com/likes/index.html?ver=20180319#blog_id=22605359&amp;post_id=200&amp;origin=bakerdh.wordpress.com&amp;obj_id=22605359-200-5b1e5b1cb49ec" data-name="like-post-frame-22605359-200-5b1e5b1cb49ec"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-22605359-200-5b1e5b1cb49ec" height="55px" width="100%" frameborder="0" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/index.html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="197" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://bakerdh.wordpress.com/2013/01/27/new-job-first-month/" title="New job, first month
+
+So, at the beginning of the month I started working at York. It’s been a busy few weeks, meeting lots of people and finding out how things work. The department is great, people have been very friendly and welcoming. So far I’ve mostly been walking in to work, and the…" rel="nofollow" data-origin="200" data-position="0">New job, first month</a></span><span class="jp-relatedposts-post-context">In "Academia"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="251" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://bakerdh.wordpress.com/2013/10/22/arduino-sound-to-ttl-trigger-for-eeg/" title="Arduino sound to TTL trigger for EEG
+
+A recent query on the Psychtoolbox mailing list about triggers for EEG prompted me to write an explanation of the system we developed at York to do this. I use the method below for steady state EEG, but it should work just as well for ERP designs. The arduino sound…" rel="nofollow" data-origin="200" data-position="1">Arduino sound to TTL trigger for EEG</a></span><span class="jp-relatedposts-post-context">With 1 comment</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="314" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://bakerdh.wordpress.com/2015/01/29/vision-in-amblyopia/" title="Vision in amblyopia
+
+In recent years there have been a number of treatments proposed for amblyopia in adults. These treatments (reviewed in this paper) often involve balancing the inputs to the two eyes - down-weighting the input to the stronger eye to allow the weaker eye to contribute. The treatments improve visual function…" rel="nofollow" data-origin="200" data-position="2">Vision in amblyopia</a></span><span class="jp-relatedposts-post-context"></span></p></div></div></div>
+				
+				<p class="postmetadata alt">
+					<small>
+					This entry was posted  on Thursday, January 31st, 2013 at 4:01 pm and is filed under <a href="https://bakerdh.wordpress.com/category/vision/methods/" rel="category tag">Methods</a>, <a href="https://bakerdh.wordpress.com/category/vision/" rel="category tag">Vision</a>.					You can follow any responses to this entry through the <a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/feed/">RSS 2.0</a> feed.
+											You can <a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#respond">leave a response</a>, or <a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/trackback/" rel="trackback">trackback</a> from your own site.
+					
+					</small>
+				</p>
+
+				<nav id="nav-below">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="https://bakerdh.wordpress.com/2013/01/27/new-job-first-month/" rel="prev">« Previous Post</a></span>
+					<span class="nav-next"><a href="https://bakerdh.wordpress.com/2013/07/28/why-can-some-peoples-brains-see-better-than-others/" rel="next">Next Post »</a></span>
+				</nav><!-- #nav-below -->
+
+			</div>
+		</div>
+
+	<div id="comments">
+
+
+<h3 id="comments-title">16 Responses to <em>A first look at the Olimex&nbsp;EEG-SMT</em></h3>
+
+
+<ol class="commentlist">
+			<li class="comment even thread-even depth-1 highlander-comment" id="comment-623">
+				<div id="div-comment-623" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/a2fe85300e8551e7f398c978452eec65" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-a2fe85300e8551e7f398c978452eec65-0">			<cite class="fn">Marcin</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-623">
+			01/06/2013 at 6:15 pm</a>		</div>
+
+		<p>have you received an answer from the mailing list?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=623#respond" onclick="return addComment.moveForm( &quot;div-comment-623&quot;, &quot;623&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to Marcin">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-631">
+				<div id="div-comment-631" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/picture" class="avatar avatar-32" height="32" width="32">			<cite class="fn"><a href="http://www.facebook.com/awodeyar" rel="external nofollow" class="url">Anirudh Wodeyar</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-631">
+			07/06/2013 at 7:17 am</a>		</div>
+
+		<p>Hey!<br>
+So we’re a bunch of researchers working with the EEG SMT here in India and we’re basically trying to understand if a human can try to make sense of another’s EEG data(somewhat on the lines of neuro-feedback). Now with respect to how many channels there are, since you have only 4 electrodes I’d venture to say you only have 2 channels as we do. We’re not sure why the design is like this where every 2 electrodes provide 1 channel, especially considering that the DRL is already there to remove noise. Your Matlab code will prove very useful to us since we wanted to actually get the data into Matlab, till now we were looking at it through Brain Bay. So thanks for that! <img draggable="false" class="emoji" alt="🙂" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/1f642.svg"><br>
+Also I’ve read on many forums that the electrodes that Olimex provide are bad quality(I’m not sure in what sense though) and they recommend a user make their own electrodes.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=631#respond" onclick="return addComment.moveForm( &quot;div-comment-631&quot;, &quot;631&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to Anirudh Wodeyar">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-bakerdh bypostauthor even thread-even depth-1 highlander-comment" id="comment-633">
+				<div id="div-comment-633" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-0">			<cite class="fn"><a href="https://bakerdh.wordpress.com/" rel="external nofollow" class="url">bakerdh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-633">
+			09/06/2013 at 11:59 am</a>		</div>
+
+		<p>Hi folks. First, sorry for the delay in replying – I’ve been moving house so have been offline for a bit. </p>
+<p>Yes, I did get some replies from the mailing list. The consensus was that the firmware supports 6 channels, but the device has only two. So, the output of channels 3-6 is probably nonsense and should be ignored. The output of channels 1 &amp; 2 are the potential difference (i.e. voltage) across the + and – electrodes.</p>
+<p>Anyway, I haven’t got much further with the device, as I’ve been using a big 64 channel EEG system for the past few months. But I do intend to revisit it in the summer now that I know a bit more about EEG in general. I’ll post and update if I get useable data from the device.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=633#respond" onclick="return addComment.moveForm( &quot;div-comment-633&quot;, &quot;633&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to bakerdh">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent highlander-comment" id="comment-893">
+				<div id="div-comment-893" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/0bc40d99081ce9cc7d276b19e198200c" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-0bc40d99081ce9cc7d276b19e198200c-0">			<cite class="fn">J.A</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-893">
+			22/08/2013 at 9:03 am</a>		</div>
+
+		<p>is it possible to use this device(eeg-smt) for 16 channels?</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=893#respond" onclick="return addComment.moveForm( &quot;div-comment-893&quot;, &quot;893&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to J.A">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-bakerdh bypostauthor even depth-2 parent highlander-comment" id="comment-894">
+				<div id="div-comment-894" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-1">			<cite class="fn"><a href="https://bakerdh.wordpress.com/" rel="external nofollow" class="url">bakerdh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-894">
+			22/08/2013 at 9:07 am</a>		</div>
+
+		<p>Hi Julius,</p>
+<p>No, it only has two (bipolar) channels. You could buy 8 of them I guess, but you’d have horrendous difficulty trying to get them all working together. I’d suggest looking at a system with more channels.</p>
+<p> – Daniel</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=894#respond" onclick="return addComment.moveForm( &quot;div-comment-894&quot;, &quot;894&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to bakerdh">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment odd alt depth-3 highlander-comment" id="comment-895">
+				<div id="div-comment-895" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/0bc40d99081ce9cc7d276b19e198200c" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-0bc40d99081ce9cc7d276b19e198200c-1">			<cite class="fn">J.A</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-895">
+			22/08/2013 at 9:21 am</a>		</div>
+
+		<p>Thank you very much sir!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment even depth-3 parent highlander-comment" id="comment-899">
+				<div id="div-comment-899" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/0bc40d99081ce9cc7d276b19e198200c" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-0bc40d99081ce9cc7d276b19e198200c-2">			<cite class="fn">J.A</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-899">
+			25/08/2013 at 5:39 pm</a>		</div>
+
+		<p>Good day sir! May I know your working email address? if it’s okay with you sir. Thank you!</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-bakerdh bypostauthor odd alt depth-3 highlander-comment" id="comment-900">
+				<div id="div-comment-900" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-2">			<cite class="fn"><a href="https://bakerdh.wordpress.com/" rel="external nofollow" class="url">bakerdh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-900">
+			26/08/2013 at 7:07 am</a>		</div>
+
+		<p>Sure. It’s listed here: <a href="http://www.york.ac.uk/psychology/staff/faculty/daniel/" rel="nofollow">http://www.york.ac.uk/psychology/staff/faculty/daniel/</a></p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 highlander-comment" id="comment-1086">
+				<div id="div-comment-1086" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/07435d7095f7d27ef846f56693328465" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-07435d7095f7d27ef846f56693328465-0">			<cite class="fn">Robert</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-1086">
+			24/02/2014 at 1:45 am</a>		</div>
+
+		<p>J.A   If you search for EEg on ebay or email to this address:<br>
+<a href="mailto:wholesale8866@gmail.com">wholesale8866@gmail.com</a>     Their unit does not seem to have an interface to any entrainment software but it will give 16 channel eeg with a QEEG map/display I don’t know how support is so check it out thoroughly before plopping down $1300 (with shipping), but then again it is only $1300 for full 16 channels.  If you have some experience in this area it could be a diamond in the rough.  The manual is available but the lack of details in that (at least in the English version) is part of what I found to be off putting.  Plus I was looking for real time entrainment.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=1086#respond" onclick="return addComment.moveForm( &quot;div-comment-1086&quot;, &quot;1086&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to Robert">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent highlander-comment" id="comment-1911">
+				<div id="div-comment-1911" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/d5ea8656b046dba81809f9f21e93da77" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-d5ea8656b046dba81809f9f21e93da77-0">			<cite class="fn">zuhan</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-1911">
+			14/07/2014 at 10:28 pm</a>		</div>
+
+		<p>Hi.<br>
+I have a problem with the connection device on Win 7 x64. Using this tutorial I <a href="https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/resources/EEG-SMT.pdf" rel="nofollow">https://www.olimex.com/Products/EEG/OpenEEG/EEG-SMT/resources/EEG-SMT.pdf</a> , but have an error in connecting the device. I use BrainBay and Openvive soft for removal of the signal, but soft doesn’t see the device. Go to  Device Manager, the device shows as inactive driver update… Help me please to resolve this issue.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=1911#respond" onclick="return addComment.moveForm( &quot;div-comment-1911&quot;, &quot;1911&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to zuhan">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-bakerdh bypostauthor even depth-2 highlander-comment" id="comment-1912">
+				<div id="div-comment-1912" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-3">			<cite class="fn"><a href="https://bakerdh.wordpress.com/" rel="external nofollow" class="url">bakerdh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-1912">
+			14/07/2014 at 10:31 pm</a>		</div>
+
+		<p>No idea what the problem is. Have you tried posting to the OpenEEG mailing list? Someone on there might have an idea. <a href="https://lists.sourceforge.net/lists/listinfo/openeeg-list" rel="nofollow">https://lists.sourceforge.net/lists/listinfo/openeeg-list</a></p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=1912#respond" onclick="return addComment.moveForm( &quot;div-comment-1912&quot;, &quot;1912&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to bakerdh">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-tizhbulatov odd alt thread-even depth-1 parent highlander-comment" id="comment-2271">
+				<div id="div-comment-2271" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/c7f73bc5e5115a88737f5adb6d1ffefc.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-c7f73bc5e5115a88737f5adb6d1ffefc-0">			<cite class="fn">tizhbulatov</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-2271">
+			11/12/2014 at 11:56 pm</a>		</div>
+
+		<p>How is your timing? I’ve tried the device on OS X 10.6 and Linux and in the former case there are really long delays (~0.9 s) that appear periodically. The following plot shows the time intervals between subsequent packets on both OSes <a href="http://postimg.org/image/saz2dhtjn/" rel="nofollow">http://postimg.org/image/saz2dhtjn/</a></p>
+<p>I think the problem is in the USB serial driver.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=2271#respond" onclick="return addComment.moveForm( &quot;div-comment-2271&quot;, &quot;2271&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to tizhbulatov">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-tizhbulatov even depth-2 parent highlander-comment" id="comment-2272">
+				<div id="div-comment-2272" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/c7f73bc5e5115a88737f5adb6d1ffefc.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-c7f73bc5e5115a88737f5adb6d1ffefc-1">			<cite class="fn">tizhbulatov</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-2272">
+			12/12/2014 at 12:14 am</a>		</div>
+
+		<p>One more thing. My code waits for the two-bytes sync sequence to detect an incoming packet instead of blindly reading everything from the device. This is what shown on the plot. And on OS X read() from device keeps getting raw data at a more stable rate, it just doesn’t seem to contain the sync sequence.</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=2272#respond" onclick="return addComment.moveForm( &quot;div-comment-2272&quot;, &quot;2272&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to tizhbulatov">Reply</a></div>
+				</div>
+		<ul class="children">
+		<li class="comment byuser comment-author-bakerdh bypostauthor odd alt depth-3 parent highlander-comment" id="comment-2276">
+				<div id="div-comment-2276" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-4">			<cite class="fn"><a href="https://bakerdh.wordpress.com/" rel="external nofollow" class="url">bakerdh</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-2276">
+			13/12/2014 at 4:45 pm</a>		</div>
+
+		<p>Hi. I’m not actively using this device. I couldn’t get reliable signals out of it so I gave up and started using higher quality hardware. I agree that your problem sounds like it’s probably a serial driver issue, but I’m afraid I don’t have any suggestions of how you could fix it.</p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+		<li class="comment byuser comment-author-tizhbulatov even depth-3 highlander-comment" id="comment-2300">
+				<div id="div-comment-2300" class="comment-body">
+				<div class="comment-author vcard">
+			<img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/c7f73bc5e5115a88737f5adb6d1ffefc.jpeg" class="avatar avatar-32 grav-hashed grav-hijack" height="32" width="32" id="grav-c7f73bc5e5115a88737f5adb6d1ffefc-2">			<cite class="fn">tizhbulatov</cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-2300">
+			29/12/2014 at 3:29 pm</a>		</div>
+
+		<p>Thanks for reply. I sort of fixed it — just use Linux for now <img draggable="false" class="emoji" alt="🙂" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/1f642.svg"></p>
+
+		
+				</div>
+		</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="pingback odd alt thread-odd thread-alt depth-1 highlander-comment" id="comment-3045">
+				<div id="div-comment-3045" class="comment-body">
+				<div class="comment-author vcard">
+						<cite class="fn"><a href="https://olimex.wordpress.com/2015/12/10/control-things-with-your-brain-and-openeeg-eeg-smt/" rel="external nofollow" class="url">Control things with your brain and OpenEEG – EEG-SMT | olimex</a></cite> <span class="says">says:</span>		</div>
+		
+		<div class="comment-meta commentmetadata"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-3045">
+			10/12/2015 at 8:45 am</a>		</div>
+
+		<p>[…] packages which can be used to capture and analyze the EEG signals. There are experiments with MATLAB&nbsp;but one of most popular software remain BrianBay&nbsp;and OpebVIBE. There are lot of&nbsp;blog posts how […]</p>
+
+		<div class="reply"><a rel="nofollow" class="comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/?replytocom=3045#respond" onclick="return addComment.moveForm( &quot;div-comment-3045&quot;, &quot;3045&quot;, &quot;respond&quot;, &quot;200&quot; )" aria-label="Reply to Control things with your brain and OpenEEG – EEG-SMT | olimex">Reply</a></div>
+				</div>
+		</li><!-- #comment-## -->
+</ol>
+
+
+
+	<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://bakerdh.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="9b04db58a6"><input type="hidden" name="_wp_http_referer" value="/2013/01/31/a-first-look-at-the-olimex-eeg-smt/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none solid rgba(0, 0, 0, 0.7); word-spacing: 0px; text-indent: 0px; line-height: normal; width: 428px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 36px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-form-guest" id="postas-guest" class="nascar-signin-link" title="Login via Guest">
+									</a>
+			</li>
+			<li>
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-form-load-service:WordPress.com" id="postas-wordpress" class="nascar-signin-link" title="Login via WordPress.com">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg>				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(9).html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+			<li>
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-form-load-service:Twitter" id="postas-twitter" class="nascar-signin-link" title="Login via Twitter">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg>				</a>
+			</li>
+			<li>
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#comment-form-load-service:Facebook" id="postas-facebook" class="nascar-signin-link" title="Login via Facebook">
+					<svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg>				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ad516503a11cd5ca435acc9bb6523536" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+						<p class="comment-form-posting-as pa-wordpress">
+			<strong></strong>
+			You are commenting using your <span class="skimlinks-unlinked">WordPress.com</span> account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;wordpress&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#0087be" d="M12.158 12.786l-2.698 7.84c.806.236 1.657.365 2.54.365 1.047 0 2.05-.18 2.986-.51-.024-.037-.046-.078-.065-.123l-2.762-7.57zM3.008 12c0 3.56 2.07 6.634 5.068 8.092L3.788 8.342c-.5 1.117-.78 2.354-.78 3.658zm15.06-.454c0-1.112-.398-1.88-.74-2.48-.456-.74-.883-1.368-.883-2.11 0-.825.627-1.595 1.51-1.595.04 0 .078.006.116.008-1.598-1.464-3.73-2.36-6.07-2.36-3.14 0-5.904 1.613-7.512 4.053.21.008.41.012.58.012.94 0 2.395-.114 2.395-.114.484-.028.54.684.057.74 0 0-.487.058-1.03.086l3.275 9.74 1.968-5.902-1.4-3.838c-.485-.028-.944-.085-.944-.085-.486-.03-.43-.77.056-.742 0 0 1.484.114 2.368.114.94 0 2.397-.114 2.397-.114.486-.028.543.684.058.74 0 0-.488.058-1.03.086l3.25 9.665.897-2.997c.456-1.17.684-2.137.684-2.907zm1.82-3.86c.04.286.06.593.06.924 0 .912-.17 1.938-.683 3.22l-2.746 7.94c2.672-1.558 4.47-4.454 4.47-7.77 0-1.564-.4-3.033-1.1-4.314zM12 22C6.486 22 2 17.514 2 12S6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+						<p class="comment-form-posting-as pa-googleplus">
+			<strong></strong>
+			You are commenting using your Google+ account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;googleplus&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" x="0px" y="0px" viewBox="0 0 60 60"><path fill="#519bf7" d="M56.3,30c0,-1.6 -0.2,-3.4 -0.6,-5h-3.1H42.2H30v10.6h14.8C44,39.3 42,42 39.1,43.9l8.8,6.8C53,46 56.3,39 56.3,30z"></path><path fill="#3db366" d="M30,57.5c6.7,0 13.1,-2.4 17.9,-6.8l-8.8,-6.8c-2.5,1.6 -5.6,2.4 -9.1,2.4c-7.2,0 -13.3,-4.7 -15.4,-11.2l-9.3,7.1C9.8,51.3 19.1,57.5 30,57.5z"></path><path fill="#fdc600" d="M5.3,42.2l9.3,-7.1c-0.5,-1.6 -0.8,-3.3 -0.8,-5.1s0.3,-3.5 0.8,-5.1l-9.3,-7.1C3.5,21.5 2.5,25.6 2.5,30S3.5,38.5 5.3,42.2z"></path><path fill="#f15b44" d="M40.1,17.4l8,-8C43.3,5.1 37,2.5 30,2.5C19.1,2.5 9.8,8.7 5.3,17.8l9.3,7.1c2.1,-6.5 8.2,-11.1 15.4,-11.1C33.9,13.7 37.4,15.1 40.1,17.4z"></path></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+						<p class="comment-form-posting-as pa-twitter">
+			<strong></strong>
+			You are commenting using your Twitter account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;twitter&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#1DA1F2" d="M22.23 5.924c-.736.326-1.527.547-2.357.646.847-.508 1.498-1.312 1.804-2.27-.793.47-1.67.812-2.606.996C18.325 4.498 17.258 4 16.078 4c-2.266 0-4.103 1.837-4.103 4.103 0 .322.036.635.106.935-3.41-.17-6.433-1.804-8.457-4.287-.353.607-.556 1.312-.556 2.064 0 1.424.724 2.68 1.825 3.415-.673-.022-1.305-.207-1.86-.514v.052c0 1.988 1.415 3.647 3.293 4.023-.344.095-.707.145-1.08.145-.265 0-.522-.026-.773-.074.522 1.63 2.038 2.817 3.833 2.85-1.404 1.1-3.174 1.757-5.096 1.757-.332 0-.66-.02-.98-.057 1.816 1.164 3.973 1.843 6.29 1.843 7.547 0 11.675-6.252 11.675-11.675 0-.178-.004-.355-.012-.53.802-.578 1.497-1.3 2.047-2.124z"></path></g></svg></span>
+		</p>
+					</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+						<p class="comment-form-posting-as pa-facebook">
+			<strong></strong>
+			You are commenting using your Facebook account.			<span class="comment-form-log-out">
+				(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( &#39;facebook&#39; );">Log&nbsp;Out</a>&nbsp;/&nbsp;
+				<a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)
+			</span>
+			<span class="pa-icon"><svg xmlns="http://www.w3.org/2000/svg" role="presentation" viewBox="0 0 24 24"><rect x="0" fill="none" width="24" height="24"></rect><g><path fill="#3B5998" d="M20.007 3H3.993C3.445 3 3 3.445 3 3.993v16.013c0 .55.445.994.993.994h8.62v-6.97H10.27V11.31h2.346V9.31c0-2.325 1.42-3.59 3.494-3.59.993 0 1.847.073 2.096.106v2.43h-1.438c-1.128 0-1.346.537-1.346 1.324v1.734h2.69l-.35 2.717h-2.34V21h4.587c.548 0 .993-.445.993-.993V3.993c0-.548-.445-.993-.993-.993z"></path></g></svg></span>
+		</p>
+		w
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="200" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="bb6398c6e2"></p>
+<input type="hidden" name="genseq" value="1528716060">
+<p style="display: none;"></p>			<input type="hidden" id="ak_js" name="ak_js" value="1528716063471"></form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div>
+</div><!-- #comments -->
+	
+	</div>
+
+
+
+	<div id="sidebar">
+				<ul>
+
+		<li id="gravatar-3" class="widget widget_gravatar"><h2 class="widgettitle">Me</h2>
+<p><img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/e7df3a5931c9a37aa3ffd06d21cd2ff1(1).jpeg" class="avatar avatar-128 grav-widget-center grav-hashed grav-hijack" height="128" width="128" style="display: block; margin: 0 auto;" id="grav-e7df3a5931c9a37aa3ffd06d21cd2ff1-5"></p>
+</li>
+<li id="text-4" class="widget widget_text"><h2 class="widgettitle">About</h2>
+			<div class="textwidget"><a title="Link to About page" href="https://bakerdh.wordpress.com/about/">About me</a>
+
+
+<a id="wwbbadgelink" target="_blank" class="wwb-contact-button" href="http://wikiworldbook.com/button-22125"><img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/wwbbadge-22125.png" width="141" height="16" border="0"></a>
+
+<br>
+</div>
+		</li>
+<li id="twitter-3" class="widget widget_twitter"><h2 class="widgettitle"><a href="http://twitter.com/bakerdh">Twitter</a></h2>
+<ul class="tweets">
+			<li>
+				My mum accidentally bought us Kanye West album cover soap... <a href="https://t.co/i7zEkIIQjE" rel="nofollow">https://t.co/i7zEkIIQjE</a> 				<a href="http://twitter.com/bakerdh/statuses/1005865754242187265" class="timesince">17&nbsp;hours&nbsp;ago</a>
+			</li>
+
+			</ul></li>
+<li id="rss_links-3" class="widget widget_rss_links"><h2 class="widgettitle">RSS feed</h2>
+<ul><li><a href="https://bakerdh.wordpress.com/feed/" title="Subscribe to Posts">RSS - Posts</a></li></ul>
+</li>
+<li id="text-5" class="widget widget_text"><h2 class="widgettitle">This week I have been reading:</h2>
+			<div class="textwidget"><p><a title="An Introduction to the Event Related Potential Technique" href="http://www.amazon.co.uk/Introduction-Event-Related-Potential-Technique-Neuroscience/dp/0262621967">An Introduction to the Event Related Potential Technique</a>, by <a title="Steve Luck" href="http://mindbrain.ucdavis.edu/people/sjluck">Steve Luck</a>.</p>
+</div>
+		</li>
+<li id="linkcat-1356" class="widget widget_links"><h2 class="widgettitle">Blogroll</h2>
+
+	<ul class="xoxo blogroll">
+<li><a href="http://www.doc.ic.ac.uk/~afd/" rel="friend" title="Friend from school">Ally Donaldson</a></li>
+<li><a href="http://www.maths.gla.ac.uk/~ajb/" rel="parent" title="My dad">Andy Baker</a></li>
+<li><a href="http://www.personal.dundee.ac.uk/~btvincen/" rel="friend colleague" title="A friend and colleague">Ben Vincent</a></li>
+<li><a href="http://www.gla.ac.uk/researchinstitutes/healthwellbeing/staff/carolehart/" rel="parent" title="My mum">Carole Hart</a></li>
+<li><a href="http://aaenstockdale.wordpress.com/" rel="friend colleague" title="Friend and colleague">Craig Aaen-Stockdale</a></li>
+<li><a href="http://fallinginlovewithyork.tumblr.com/" title="A Tumblr I made with pictures from around York">Falling in love with York</a></li>
+<li><a href="http://psychwire.wordpress.com/" rel="colleague" title="Colleage from Southampton">Hayward's blog</a></li>
+<li><a href="http://home.planet.nl/~brascamp/" rel="colleague" title="A friend and colleague/collaborator">Jan Brascamp</a></li>
+<li><a href="http://www.met.reading.ac.uk/users/users/1142" rel="sibling" title="My sister, a meteorologist">Laura Baker</a></li>
+<li><a href="http://www.york.ac.uk/psychology/staff/faculty/daniel/" title="This is my work webpage">My work website</a></li>
+<li><a href="http://www.scilogs.com/counterbalanced/" title="Colleague at Bath Spa Uni">Pete Etchells</a></li>
+<li><a href="http://robertposhea.blogspot.co.uk/" title="Colleage from Australia, well known binocular rivalry researcher">Robert O'Shea</a></li>
+<li><a href="http://www.personal.soton.ac.uk/erich/VisionLabs/Home.html" title="Where I had my first postdoc job">Southampton vision lab</a></li>
+<li><a href="http://www.theava.net/" title="UK organisation promoting vision research" target="_blank">The AVA</a></li>
+<li><a href="http://themindwanders.com/" title="Blog by my colleague Jonny Smallwood about mind wandering">The Mind Wanders</a></li>
+<li><a href="http://www.visionsciences.org/" title="Vision Sciences Society – organises an annual vision conference in Florida">VSS</a></li>
+
+	</ul>
+</li>
+
+		<div class="wpcnt">
+			<div class="wpa wpwidesky">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">
+							<div style="padding-bottom:15px;width:160px;height:600px;">
+		<div id="atatags-286348-5b1e5b1cbe1b5">
+			<script type="text/javascript">
+			__ATA.cmd.push(function() {
+				__ATA.initSlot('atatags-286348-5b1e5b1cbe1b5',  {
+					collapseEmpty: 'before',
+					sectionId: '286348',
+					width: 160,
+					height: 600
+				});
+			});
+			</script>
+		</div></div>
+				</div>
+				
+			</div>
+		</div>		</ul>
+	</div>
+
+
+
+<div id="footer">
+	<p>
+	<br>
+	<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a>
+	</p>
+</div>
+
+</div>
+
+		<!--  -->
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/gprofiles.js.Download"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/wpgroho.js.Download"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-a2fe85300e8551e7f398c978452eec65">
+	</div>
+	<div class="grofile-hash-map-2475690445b59daa60007e72deb2ec7d">
+	</div>
+	<div class="grofile-hash-map-e7df3a5931c9a37aa3ffd06d21cd2ff1">
+	</div>
+	<div class="grofile-hash-map-0bc40d99081ce9cc7d276b19e198200c">
+	</div>
+	<div class="grofile-hash-map-07435d7095f7d27ef846f56693328465">
+	</div>
+	<div class="grofile-hash-map-d5ea8656b046dba81809f9f21e93da77">
+	</div>
+	<div class="grofile-hash-map-c7f73bc5e5115a88737f5adb6d1ffefc">
+	</div>
+	<div class="grofile-hash-map-e7df3a5931c9a37aa3ffd06d21cd2ff1">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/bakerdh.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/bakerdh.wordpress.com\/wp-login.php?action=logout&_wpnonce=9f3e0e23c0","homeURL":"https:\/\/bakerdh.wordpress.com\/","postID":"200","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(6)"></script>
+
+	<div id="carousel-reblog-box">
+		<form action="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/#" class="cancel">Cancel</a></span>
+				<input type="submit" name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post">
+				<input type="hidden" id="carousel-reblog-blog-id" value="22605359">
+				<input type="hidden" id="carousel-reblog-blog-url" value="https://bakerdh.wordpress.com">
+				<input type="hidden" id="carousel-reblog-blog-title" value="Daniel&#39;s Visionarium">
+				<input type="hidden" id="carousel-reblog-post-url" value="">
+				<input type="hidden" id="carousel-reblog-post-title" value="">
+			</div>
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="0ad272fbae"><input type="hidden" name="_wp_http_referer" value="/2013/01/31/a-first-look-at-the-olimex-eeg-smt/">		</form>
+
+		<div class="arrow"></div>
+	</div>
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/widgets.js.Download"></script>
+<link rel="stylesheet" id="all-css-0-3" href="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/jetpack-carousel.css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"22605359","siteName":"Daniel's Visionarium","siteURL":"http:\/\/bakerdh.wordpress.com","icon":"<img alt='' src='https:\/\/s2.wp.com\/i\/logo\/wpcom-gray-white.png' class='avatar avatar-50' height='50' width='50' \/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/contempt","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/bakerdh.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F","themeURL":"","xhrURL":"https:\/\/bakerdh.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"ca7c3f0c68","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"9014fe7ae4\" \/>","referer":"https:\/\/bakerdh.wordpress.com\/2013\/01\/31\/a-first-look-at-the-olimex-eeg-smt\/","canFollow":"1","feedID":"481382","statusMessage":"","customizeLink":"https:\/\/bakerdh.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F","postID":"200","shortlink":"https:\/\/wp.me\/p1wQGz-3e","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/bakerdh.wordpress.com\/200","statsLink":"https:\/\/wordpress.com\/stats\/post\/200\/bakerdh.wordpress.com","i18n":{"view":"View site","follow":"Follow","following":"Following","edit":"Edit","login":"Log in","signup":"Sign up","customize":"Customize","report":"Report this content","themeInfo":"Get theme: Contempt","shortlink":"Copy shortlink","copied":"Copied","followedText":"New posts from this site will now appear in your <a href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this bar","unfoldBar":"Expand this bar","editSubs":"Manage subscriptions","viewReader":"View site in Reader","viewReadPost":"View post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email address","followers":"","alreadyUser":"Already have a WordPress.com account? <a href=\"https:\/\/bakerdh.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F\">Log in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = {"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/bakerdh.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"ec07ab3996","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post Comment","write_comment":"Write a Comment...","loading_comments":"Loading Comments...","download_original":"View full size <span class=\"photo-size\">{0}<span class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please be sure to submit some text with your comment.","no_comment_email":"Please provide an email address to comment.","no_comment_author":"Please provide your name to comment.","comment_post_error":"Sorry, but there was an error posting your comment. Please try again later.","comment_approved":"Your comment was approved.","comment_unapproved":"Your comment is in moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter Speed","focal_length":"Focal Length","copyright":"Copyright","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/bakerdh.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F","blog_id":"22605359","meta_data":["camera","aperture","shutter_speed","focal_length","copyright"],"local_comments_commenting_as":"<fieldset><label for=\"email\">Email (Required)<\/label> <input type=\"text\" name=\"email\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-email-field\" \/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> <input type=\"text\" name=\"author\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-author-field\" \/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field jp-carousel-comment-form-text-field\" id=\"jp-carousel-comment-form-url-field\" \/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add your thoughts here... (optional)","reblogging":"Reblogging...","post_reblog":"Post Reblog","stats_query_args":"blog=22605359&v=wpcom&tz=1&user_id=0&subd=bakerdh","is_public":"1","reblog_enabled":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(7)"></script><div class="widget widget_eu_cookie_law_widget" style="display: block;">
+</div><div id="actionbar" class="actnbr-pub-contempt actnbr-has-follow"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://bakerdh.wordpress.com/"><img alt="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/wpcom-gray-white.png" class="avatar avatar-50" height="50" width="50"> Daniel's Visionarium</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://bakerdh.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Customize<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/"><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Sign up</a></li> 				    <li class="actnbr-login actnbr-hidden"><a href="https://bakerdh.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Fbakerdh.wordpress.com%2F2013%2F01%2F31%2Fa-first-look-at-the-olimex-eeg-smt%2F">Log in</a></li> 				     				    <li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p1wQGz-3e">Copy shortlink</a></li> 				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Report this content</a></li> 				     				     				    <li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Manage subscriptions</a></li> 				    <li class="actnbr-fold actnbr-hidden"><a href="https://bakerdh.wordpress.com/2013/01/31/a-first-look-at-the-olimex-eeg-smt/">Collapse this bar</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>	<script type="text/javascript">
+	var skimlinks_pub_id = "725X584219"
+	var skimlinks_sitename = "bakerdh.wordpress.com";
+	</script>
+	<script type="text/javascript" defer="" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/725X1342.skimlinks.js.Download"></script>		<iframe src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/w.js.Download" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'22605359','blog_tz':'1','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'22605359','v':'wpcom','tz':'1','user_id':'0','post':'200','subd':'bakerdh'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMlVHWUJnN2NVaVRYaFA/Sm9PcUVmNSxGYnEvam9DbEwlYWVfL3M3b0smZFRveFdhdXVkZjFJUEdjZzdjW3NRR3c5NkcxWno1N3R+elR8VV94X2tbajFVeH5FJi49QnxXa1ZJZ2xYLmlNMHNyWlt5ci9nV05qNjRfOXdwLiV5VStVVjcvRGZEYm84RX5xYUNTRVpfP2hhTDE1UnRCdWQ5WEtxVGozdUZmWT9ScjN0UUxRJnZXaTdLdCZtTzZmdnpLbkpBTndmdW94YVhZQWJJbzZuUm93Mjc9P2QvMi1hJjEsZzRbMXcyN0J6P1c9LnxYVmFtK3NrbXl+emtlaE5rMWFtcEd6OS4='}]);
+_stq.push([ 'clickTrackerInit', '22605359', '200' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/widget_iframe.ed3aa96ee3d5c426af8aa717469ea983.html" title="Twitter settings iframe" style="display: none;"></iframe><img src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/g.gif" alt=":)" id="wpstats"><iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;" title="Twitter analytics iframe" src="./A first look at the Olimex EEG-SMT _ Daniel&#39;s Visionarium_files/saved_resource(10).html"></iframe></body></html>
