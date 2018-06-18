@@ -1,6 +1,6 @@
 duration=10;
 %Load serial data
-data = dlmread('testdata/frontal_lobe_10s_look_left_3_times.txt');
+data = dlmread('testdata/frontal_lobe_10s_teeth_1.txt');
 samplingrate=256;
 [rows, cols] = size(data);
 k=0:samplingrate*duration-1;
@@ -12,8 +12,8 @@ sample = data(1, 1:end);
 %figure;
 %plot(sample);
 
-filteredData = bpfilt(sample, 0, 4, samplingrate, 0);
-sample = filteredData;
+filteredData = bpfilt(sample, 1, 49, samplingrate, 0);
+%sample = filteredData;
 %sample = detrend(sample, 0);
 
 figure;
@@ -23,7 +23,7 @@ plot(k./samplingrate, sample);
 y=fft(sample);
 yp=abs(y); %Amptlitudengang
 yang=angle(y); %Phasengang
-%figure;
+figure;
 %stem(k./duration, yp./(duration*samplingrate/2));
-%stem(k./duration, yp);
+stem(k./duration, yp);
 %stem(yp);

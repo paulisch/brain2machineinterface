@@ -7,5 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_161_32"/>
+	<classpathentry kind="lib" path="D:/projects/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="D:/projects/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1-tools.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
