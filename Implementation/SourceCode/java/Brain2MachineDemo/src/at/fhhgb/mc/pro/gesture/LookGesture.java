@@ -15,7 +15,10 @@ public class LookGesture extends Gesture<LookGestureEventListener> {
 	private static final double SLOPE_SECONDS = 0.08;
 	private static final double LOOK_BACK_TO_CENTER_OFFSET = 1.0;
 	
+	private static final double SLOPE_MAX = 4;
+	
 	private long mLastDetectionSample = -1;
+	private long mLastSample = -1;
 	private LookGestureDirection mLastDirection = null;
 
 	@Override
@@ -30,38 +33,47 @@ public class LookGesture extends Gesture<LookGestureEventListener> {
 			return;
 		}
 		
-		double ch1Val = buffer[0][i];
-		double ch2Val = buffer[1][i];
+		int max = mLastSample == -1 ? 0 : (int)(_reader.getChannelDataSampleCount() - mLastSample);
 		
-		boolean fallingSignal = (ch1Val <= THRESHOLD_CH1_LOW && ch2Val <= THRESHOLD_CH2_LOW);
-		boolean risingSignal = (ch1Val >= THRESHOLD_CH1_HIGH && ch2Val >= THRESHOLD_CH2_HIGH);
-		boolean detected = fallingSignal != risingSignal;
-		
-		if (detected && (mLastDetectionSample == -1 || (_reader.getChannelDataSampleCount() - mLastDetectionSample) >= safeOffset)) {			
-			SimpleRegression regression = new SimpleRegression();
-			double[][] regArray = new double[slopeSamples][2];
-			int regIdx = 0;
-			for(int idx = i-slopeSamples; idx < i; idx++) {
-				int actualIdx = idx < 0 ? buffer.length + idx : idx;
-				regArray[regIdx][0] = (double)regIdx / _reader.getSampleRate();
-				regArray[regIdx][1] = buffer[1][actualIdx];
-				regIdx++;
-			}
-			regression.addData(regArray);
-			double slope = regression.getSlope();
+		for (int idx = max - 1; idx>=0; idx--) {
+			int actualIdx = i - idx;
+			actualIdx = actualIdx < 0 ? buffer[0].length + actualIdx : actualIdx;
 			
-			if ((fallingSignal && slope < 0) || (risingSignal && slope > 0)) {
-				LookGestureDirection dir = fallingSignal ? LookGestureDirection.RIGHT : LookGestureDirection.LEFT;
+			double ch1Val = buffer[0][actualIdx];
+			double ch2Val = buffer[1][actualIdx];
+			
+			boolean fallingSignal = (ch1Val <= THRESHOLD_CH1_LOW && ch2Val <= THRESHOLD_CH2_LOW);
+			boolean risingSignal = (ch1Val >= THRESHOLD_CH1_HIGH && ch2Val >= THRESHOLD_CH2_HIGH);
+			boolean detected = fallingSignal != risingSignal;
+			
+			if (detected && (mLastDetectionSample == -1 || (_reader.getChannelDataSampleCount() - idx - mLastDetectionSample) >= safeOffset)) {			
+				SimpleRegression regression = new SimpleRegression();
+				double[][] regArray = new double[slopeSamples][2];
+				int regIdx = 0;
+				for(int idx2 = i-slopeSamples; idx2 < i; idx2++) {
+					int actualIdx2 = idx2 < 0 ? buffer[0].length + idx2 : idx2;
+					regArray[regIdx][0] = (double)regIdx / _reader.getSampleRate();
+					regArray[regIdx][1] = buffer[1][actualIdx2];
+					regIdx++;
+				}
+				regression.addData(regArray);
+				double slope = regression.getSlope();
 				
-				if (!(mLastDirection != dir && (_reader.getChannelDataSampleCount() - mLastDetectionSample) <= backToCenterSamples)) {
-					LookGestureEvent evt = new LookGestureEvent(dir);
-					notifyLook(evt);
+				if (((fallingSignal && slope < 0) || (risingSignal && slope > 0)) && Math.abs(slope) <= SLOPE_MAX) {					
+					LookGestureDirection dir = fallingSignal ? LookGestureDirection.RIGHT : LookGestureDirection.LEFT;
 					
-					mLastDetectionSample = _reader.getChannelDataSampleCount();
-					mLastDirection = dir;
+					if (!(mLastDirection != dir && (_reader.getChannelDataSampleCount() - mLastDetectionSample) <= backToCenterSamples)) {
+						LookGestureEvent evt = new LookGestureEvent(dir);
+						notifyLook(evt);
+						
+						mLastDetectionSample = _reader.getChannelDataSampleCount() - idx;
+						mLastDirection = dir;
+					}
 				}
 			}
 		}
+		
+		mLastSample = _reader.getChannelDataSampleCount();
 	}
 	
 	private void notifyLook(LookGestureEvent _evt) {
