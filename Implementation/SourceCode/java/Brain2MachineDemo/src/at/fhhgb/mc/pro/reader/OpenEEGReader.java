@@ -143,6 +143,9 @@ public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 		if (mReader.isConnected()) {
 			mReader.disconnect();
 		}
+		if (mReaderThread != null) {
+			mReaderThread.interrupt();
+		}
 		mReaderThread = null;
 	}
 

@@ -82,7 +82,7 @@ public class SerialReader implements Runnable {
             }
             System.out.println("Reading thread exit.");
         }
-        catch (IOException e )
+        catch (IOException e)
         {
             System.err.println(e.getStackTrace());
         }
@@ -135,7 +135,8 @@ public class SerialReader implements Runnable {
                 }                
             }
             mSerialPort.close();
-            System.out.println("Serial port " + mPort + " disconnected.");        
+            System.out.println("Serial port " + mPort + " disconnected.");  
+            mIStream = null;
             mSerialPort = null;        
         } else {
             System.out.println("No need to close serial port: Not connected.");

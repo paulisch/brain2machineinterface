@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/projects/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar">
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/rxtx-2.1-7-bins-r2/RXTXcomm.jar">
 		<attributes>
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="Brain2MachineDemo/lib/rxtx-2.1-7-bins-r2/Windows/i368-mingw32"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_161_32"/>
-	<classpathentry kind="lib" path="D:/projects/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1.jar"/>
-	<classpathentry kind="lib" path="D:/projects/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1-tools.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_152_32bit"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-math3-3.6.1-tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/commons-cli.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/dbusjava.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/ev3classes.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/ev3tools.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/jcommon.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/jfreechart.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/jsch-0.1.50.jar"/>
+	<classpathentry kind="lib" path="C:/Users/boris/Desktop/FH.Hagenberg/projekte/brain2machineinterface/Implementation/SourceCode/java/Brain2MachineDemo/lib/opencv-2411.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
