@@ -9,8 +9,8 @@ import at.fhhgb.mc.pro.reader.OpenEEGReader;
 
 public class FreqGesture extends Gesture<FreqGestureEventListener> {
 	
-	public static final float THRESHOLD_BITE_1_SEC_SAMPLES_CH1 = 0.7f;
-	public static final float THRESHOLD_BITE_1_SEC_SAMPLES_CH2 = 2.3f;
+	public static final float THRESHOLD_BITE_1_SEC_SAMPLES_CH1 = 0.6f;
+	public static final float THRESHOLD_BITE_1_SEC_SAMPLES_CH2 = 2.1f;
 	
 	public static final float THRESHOLD_SMILE_1_SEC_SAMPLES_CH1 = 0.07f;
 	public static final float THRESHOLD_SMILE_1_SEC_SAMPLES_CH2 = 0.37f;
