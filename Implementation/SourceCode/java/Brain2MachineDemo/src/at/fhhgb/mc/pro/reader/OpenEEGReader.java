@@ -2,10 +2,13 @@ package at.fhhgb.mc.pro.reader;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import at.fhhgb.mc.pro.gesture.Gesture;
 import gnu.io.SerialPort;
+import at.fhhgb.mc.pro.gesture.Gesture;
 
+/**
+ * 
+ * @author Boris Fuchs, Paul Schmutz
+ */
 public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 	
 	public static final int CHANNELS_DEFAULT = 2;
@@ -43,6 +46,7 @@ public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 	
 	private boolean mSyncing = false;
 	
+	@SuppressWarnings("rawtypes")
 	private List<Gesture> mGestures = null;
 	
 	public OpenEEGReader(String _port) {
@@ -53,6 +57,7 @@ public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 		this(_port, _channels, EEG_BUFFER_TIME_DEFAULT);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public OpenEEGReader(String _port, int _channels, int _bufferSamplesSeconds) {
 		mBufferSamplesSeconds = Math.max(0, _bufferSamplesSeconds);
 		setChannels(_channels);
@@ -93,10 +98,12 @@ public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 		return mChannels;
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public void addGesture(Gesture _gesture) {
 		mGestures.add(_gesture);
 	}
 	
+	@SuppressWarnings("rawtypes")
 	public void removeGesture(Gesture _gesture) {
 		mGestures.remove(_gesture);
 	}
@@ -208,7 +215,7 @@ public class OpenEEGReader implements SerialReader.ReceiveEventListener {
 		}
 		
 		//Handle gestures
-		for(Gesture gesture : mGestures) {
+		for(@SuppressWarnings("rawtypes") Gesture gesture : mGestures) {
 			gesture.handleNextSample(this);
 		}
 		

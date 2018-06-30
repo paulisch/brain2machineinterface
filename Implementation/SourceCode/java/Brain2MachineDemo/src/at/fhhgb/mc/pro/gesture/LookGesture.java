@@ -3,18 +3,52 @@ package at.fhhgb.mc.pro.gesture;
 import org.apache.commons.math3.stat.regression.SimpleRegression;
 import at.fhhgb.mc.pro.reader.OpenEEGReader;
 
+/**
+ * A class representing a look gesture (moving eyes).
+ * @author Boris Fuchs, Paul Schmutz
+ */
 public class LookGesture extends Gesture<LookGestureEventListener> {
 	
+	/**
+	 * Predefined constant for the threshold of look gestures on channel 1 high.
+	 */
 	private static final double THRESHOLD_CH1_HIGH = 0.57;
+	
+	/**
+	 * Predefined constant for the threshold of look gestures on channel 1 low.
+	 */
 	private static final double THRESHOLD_CH1_LOW = 0.44;
 	
+	
+	/**
+	 * Predefined constant for the threshold of look gestures on channel 2 high.
+	 */
 	private static final double THRESHOLD_CH2_HIGH = 0.9;
+	
+	/**
+	 * Predefined constant for the threshold of look gestures on channel 2 low.
+	 */
 	private static final double THRESHOLD_CH2_LOW = 0.1;
 	
+	
+	/**
+	 * Time in seconds that has to pass before the next look gesture can be detected.
+	 */
 	private static final double SAFE_OFFSET_SECONDS = 0.25;
+	
+	/**
+	 * The duration of the slope that is characteristic for a look gesture.
+	 */
 	private static final double SLOPE_SECONDS = 0.08;
+	
+	/**
+	 * The duration of being able to look back to center without triggering another look gesture.
+	 */
 	private static final double LOOK_BACK_TO_CENTER_OFFSET = 1.0;
 	
+	/**
+	 * The maximum slope of the look gesture.
+	 */
 	private static final double SLOPE_MAX = 4;
 	
 	private long mLastDetectionSample = -1;

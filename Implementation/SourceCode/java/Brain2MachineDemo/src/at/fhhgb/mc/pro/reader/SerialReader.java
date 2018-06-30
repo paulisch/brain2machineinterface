@@ -1,6 +1,5 @@
 package at.fhhgb.mc.pro.reader;
 
-import java.awt.Toolkit;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -9,6 +8,10 @@ import gnu.io.CommPort;
 import gnu.io.CommPortIdentifier;
 import gnu.io.SerialPort;
 
+/**
+ * 
+ * @author Boris Fuchs, Paul Schmutz
+ */
 public class SerialReader implements Runnable {
 	
 	public static final int BUFFER_SIZE_DEFAULT = 256;

@@ -1,5 +1,7 @@
 package at.fhhgb.mc.pro.gesture;
 
-public interface GestureEventListener {
-
-}
+/**
+ * The base interface for all gesture event listeners.
+ * @author Boris Fuchs, Paul Schmutz
+ */
+public interface GestureEventListener { }

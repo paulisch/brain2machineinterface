@@ -1,5 +1,9 @@
 package at.fhhgb.mc.pro.gesture;
 
+/**
+ * A class representing a look gesture event.
+ * @author Boris Fuchs, Paul Schmutz
+ */
 public class LookGestureEvent extends GestureEvent {
 	
 	private LookGestureDirection mDirection;

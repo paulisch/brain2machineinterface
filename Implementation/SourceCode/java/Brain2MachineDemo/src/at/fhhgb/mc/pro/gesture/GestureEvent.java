@@ -1,5 +1,7 @@
 package at.fhhgb.mc.pro.gesture;
 
-public abstract class GestureEvent {
-
-}
+/**
+ * This class is prodiving the base for all gesture events.
+ * @author Boris Fuchs, Paul Schmutz
+ */
+public abstract class GestureEvent { }
