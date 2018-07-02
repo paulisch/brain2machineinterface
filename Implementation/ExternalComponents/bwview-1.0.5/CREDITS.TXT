@@ -1,7 +1,0 @@
-Here is a list of people who have contributed ideas or code snippets
-to BWView.  Many thanks!
-
-  Jack Spaar
-
-
-// END //

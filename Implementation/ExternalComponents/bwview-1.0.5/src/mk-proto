@@ -1,5 +1,0 @@
-#!/bin/bash
-
-proto -ev *.c |
-perl -n -e '/^extern\s+struct\s+\w+\s*;\s*$/ || print;' >proto.h
-
