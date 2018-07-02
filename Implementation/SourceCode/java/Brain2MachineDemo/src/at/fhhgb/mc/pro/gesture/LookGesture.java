@@ -51,10 +51,25 @@ public class LookGesture extends Gesture<LookGestureEventListener> {
 	 */
 	private static final double SLOPE_MAX = 4;
 	
+	/**
+	 * The time stamp of the last sample a look gesture has been detected.
+	 */
 	private long mLastDetectionSample = -1;
+	
+	/**
+	 * The time stamp of the last sample delivered by the reader.
+	 */
 	private long mLastSample = -1;
+	
+	/**
+	 * The direction of the last detected look gesture.
+	 */
 	private LookGestureDirection mLastDirection = null;
 
+	/**
+	 * Checks next incoming samples of the reader to trigger events if appropriate.
+	 * @param _reader the OpenEEGReader that provides the data for analysis
+	 */
 	@Override
 	public void handleNextSample(OpenEEGReader _reader) {
 		int safeOffset = (int)(SAFE_OFFSET_SECONDS * _reader.getSampleRate());
@@ -110,6 +125,10 @@ public class LookGesture extends Gesture<LookGestureEventListener> {
 		mLastSample = _reader.getChannelDataSampleCount();
 	}
 	
+	/**
+	 * Helper method to trigger the a look gesture event.
+	 * @param _evt the look gesture event
+	 */
 	private void notifyLook(LookGestureEvent _evt) {
 		for (LookGestureEventListener listener : mListeners) {
 			listener.onLook(_evt);

@@ -6,20 +6,27 @@ package at.fhhgb.mc.pro.gesture;
  */
 public class LookGestureEvent extends GestureEvent {
 	
+	/**
+	 * The direction of the look gesture.
+	 */
 	private LookGestureDirection mDirection;
 	
+	/**
+	 * Default constructor.
+	 * @param _direction the required direction of the look gesture 
+	 */
 	public LookGestureEvent(LookGestureDirection _direction) {
 		if (_direction == null) {
 			throw new IllegalArgumentException("Constructor parameter _direction must not be null in class " + this.getClass().getName() + "!");
 		}
-		setDirection(_direction);
+		mDirection = _direction;
 	}
 
+	/**
+	 * Gets the look gesture direction.
+	 * @return the look gesture direction
+	 */
 	public LookGestureDirection getDirection() {
 		return mDirection;
-	}
-
-	public void setDirection(LookGestureDirection _direction) {
-		this.mDirection = _direction;
 	}
 }
