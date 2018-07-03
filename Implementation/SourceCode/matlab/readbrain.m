@@ -1,6 +1,6 @@
 duration=10;
 %Load serial data
-data = dlmread('testdata/frontal_lobe_10s_mouth_open_close.txt');
+data = dlmread('testdata/frontal_lobe_10s_look_left_3_times_2.txt');
 samplingrate=256;
 [rows, cols] = size(data);
 k=0:cols-1;
