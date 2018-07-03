@@ -1,13 +1,23 @@
 duration=10;
 %Load serial data
-data = dlmread('testdata/frontal_lobe_10s_look_left_3_times_2.txt');
+data = dlmread('testdata/frontal_lobe_10s_look_left_3_times.txt');
 samplingrate=256;
 [rows, cols] = size(data);
 k=0:cols-1;
 
-sample = data(1, 1:end);
+sample = data(2, 1:end);
 %sample = smooth(sample);
 %sample = detrend(sample, 0);
+
+%sample1 = data(1, 1:end);
+%sample2 = data(2, 1:end);
+
+%figure;
+%hold on;
+%plot(k./samplingrate, sample1);
+%plot(k./samplingrate, sample2);
+%legend('CH1', 'CH2');
+%hold off;
 
 %figure;
 %plot(sample);
